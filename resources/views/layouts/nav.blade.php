@@ -64,6 +64,9 @@
                                 </ul>
                             </li>
                             <li class="nav-main-heading">Base</li>
+
+                            {{-- Blog --}}
+
                             <li class="nav-main-item">
                                 <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
                                     <i class="nav-main-link-icon fa fa-border-all"></i>
@@ -75,9 +78,36 @@
                                             <span class="nav-main-link-name">Xəbərlər</span>
                                         </a>
                                     </li>
+                                </ul>
+                            </li>
+
+                            {{-- Fəxrlərimiz --}}
+
+                            <li class="nav-main-item">
+                                <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
+                                    <i class="nav-main-link-icon fa fa-border-all"></i>
+                                    <span class="nav-main-link-name">Fəxirlərimiz</span>
+                                </a>
+                                <ul class="nav-main-submenu">
                                     <li class="nav-main-item">
-                                        <a class="nav-main-link" href="be_blocks_styles.html">
-                                            <span class="nav-main-link-name">Styles</span>
+                                        <a class="nav-main-link" href="{{ route('famous_people.index') }}">
+                                            <span class="nav-main-link-name">Tanınmış Şəxslər</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            {{-- Qürurlarımız --}}
+
+                            <li class="nav-main-item">
+                                <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
+                                    <i class="nav-main-link-icon fa fa-border-all"></i>
+                                    <span class="nav-main-link-name">Qürurlarımız</span>
+                                </a>
+                                <ul class="nav-main-submenu">
+                                    <li class="nav-main-item">
+                                        <a class="nav-main-link" href="{{ route('martyrs.index') }}">
+                                            <span class="nav-main-link-name">Şəhidlər</span>
                                         </a>
                                     </li>
                                 </ul>

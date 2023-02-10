@@ -20,11 +20,11 @@
                                             <span class="badge badge-danger">Deaktiv</span>
                                         @endif
                                     </span>
-                                    <h4 class="mb-1">{{ Str::limit($new->title, '25', '...') }}</h4>
+                                    <h4 class="mb-1">{{ Str::limit($new->title, '20', '...') }}</h4>
                                     <p class="font-size-sm">
                                         <span class="text-primary">{{ $new->created_at }}</span>
                                     </p>
-                                    <p>{!! Str::limit($new->description, '37', '...') !!}</p>                                    
+                                    <p>{!! Str::limit($new->description, '32', '...') !!}</p>                                    
                                 <form action="{{ route('news.destroy',$new->id)}}" method="POST">
                                     @method('DELETE')
                                     @csrf
