@@ -29,5 +29,6 @@ Route::prefix('admin')->group(function() {
     Route::resource('famous_people',FamousPeopleController::class);
     Route::resource('martyrs',MartyrsController::class);
     Route::resource('photos',PhotoController::class);
+    Route::get('/photos/images/{id}/delete',[PhotoController::class,'delete'])->name('photos.delete');
     Route::resource('videos',VideoController::class);
 });

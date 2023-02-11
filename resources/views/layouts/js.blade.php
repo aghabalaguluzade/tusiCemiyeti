@@ -14,6 +14,7 @@
             assets/js/core/jquery.appear.min.js
             assets/js/core/js.cookie.min.js
         -->
+
         <script src="{{ asset('assets/js/dashmix.core.min.js') }}"></script>
 
         <!--

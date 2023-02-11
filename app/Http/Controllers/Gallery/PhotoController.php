@@ -89,7 +89,7 @@ class PhotoController extends Controller
      */
     public function show(Photo $photo)
     {
-        //
+        return view('photos.show', compact('photo'));
     }
 
     /**
@@ -136,8 +136,6 @@ class PhotoController extends Controller
         $photo->title = $request->title;
         $photo->description = $request->description;
 
-        return redirect()->back()->with($photo->save() ? "success" : "error", true);
-
         if($request->hasFile('image')) {
             $files = $request->file('image');
             foreach ($files as $file) {
@@ -145,14 +143,14 @@ class PhotoController extends Controller
                 $upload_path = 'uploads/photos/img/';
                 $file->move($upload_path, $imageName);
                 $img_name = $upload_path.$imageName;
-                $imagess = Images::all();
-                if($photo->id === $imagess) {
-                $image = Images::update([
+                $image = Images::create([
+                    'photo_id' => $photo->id,
                     'image' => $img_name
                 ]);
-            }
         }
     }
+
+        return redirect()->back()->with($photo->save() ? "success" : "error", true);
 }
 
     /**
@@ -170,16 +168,32 @@ class PhotoController extends Controller
             if(file_exists($photo->preview_img)) {
                 unlink($photo->preview_img);
             }
-            return redirect()->back()->with($photo->delete() ? "success" : "error", true);
 
-            $images = Images::where('photo_id',$photo->id)->get();
-            foreach ($images as $image) {
-                if(file_exists($image->image)) {
-                    unlink($image->image);
+            if($photo->images) {
+                foreach($photo->images as $image) {
+                    if(file_exists($image->image)) {
+                        unlink($image->image);
+                    }
                 }
-                return redirect()->back()->with($image->delete() ? "success" : "error", true);
             }
+            return redirect()->back()->with($photo->delete() ? "success" : "error", true);
         }
+
         return redirect()->back()->with("not_found", true);
     }
+
+    public function delete(int $id) {
+        $referer = isset($_SERVER["HTTP_REFERER"]);
+        if(!$referer) return redirect()->back();
+
+        $images = Images::find($id);
+        if($images) {
+            if(file_exists($images->image)) {
+                unlink($images->image);
+            }
+            return redirect()->back()->with($images->delete() ? "success" : "errror", true);
+        }
+        return redirect()->back()->with("not_found",true);
+    }
+
 }

@@ -28,10 +28,32 @@
                                                 <label class="custom-file-label" for="example-file-input-multiple-custom">Şəkili Seçin...</label>
                                             </div>
                                         </div>
-                                        <h6>Cari Rəsm</h6>
-                                        @foreach ($photo->images as $img)
+                                            <h6>Cari Rəsm</h6>
+                                        {{-- @foreach ($photo->images as $img)
                                         <img src="{{ asset($img->image) }}" style="width:250px; height:200px; margin-bottom:10px" alt="{{ $photo->title }}" />  
-                                        @endforeach
+                                        @endforeach --}}
+
+
+<div class="row items-push js-gallery js-gallery-enabled">
+@foreach ($photo->images as $img)
+    
+                        <div class="col-md-6 col-lg-4 col-xl-3 animated fadeIn">
+                            <div class="options-container fx-item-zoom-in fx-overlay-zoom-out">
+                                <img class="img-fluid options-item" src="{{ asset($img->image) }}" alt="{{ $photo->title }}" style="width:250px; height:200px; margin-bottom:10px" />
+                                <div class="options-overlay bg-black-75">
+                                    <div class="options-overlay-content">
+                                        <a class="btn btn btn-danger img-lightbox" href="{{ route('photos.delete',$img->id) }}" onclick="return confirm('Silmək istədiyindən əminsən?')">
+                                            <i class="si si-close mr-1"></i> Sil
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+    @endforeach
+
+                    </div>
+
                                         <div class="form-group">
                                             <label>Fotolar Şəkili</label>
                                             <div class="custom-file">
@@ -123,4 +145,9 @@
   });
 
 </script>
+<!-- Page JS Plugins -->
+        <script src="{{ asset('assets/js/plugins/magnific-popup/jquery.magnific-popup.min.js') }}"></script>
+
+        <!-- Page JS Helpers (Magnific Popup Plugin) -->
+        <script>jQuery(function(){Dashmix.helpers('magnific-popup');});</script>
 @endsection

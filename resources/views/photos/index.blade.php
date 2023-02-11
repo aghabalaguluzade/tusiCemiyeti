@@ -25,6 +25,7 @@
                                 </thead>
                                 <tbody>
 
+
                                         @foreach ($photos as $photo)
 
 
@@ -34,13 +35,26 @@
                                              <img src="{{ asset($photo->preview_img) }}" alt="{{ $photo->title }}" style="width:100px;height:100px" />
                                         </td>
                                         <td>
-                                        @foreach ($photo->images as $image)
-                                             <img src="{{ asset($image->image) }}" alt="{{ $photo->title }}" style="width:100px;height:100px" />
-                                        @endforeach
+
+                                        <div class="row items-push js-gallery js-gallery-enabled">
+                        <div class="col-md-12 col-lg-12 col-xl-12 animated fadeIn">
+                            <div class="options-container fx-item-zoom-in fx-overlay-zoom-out">
+                                <img class="img-fluid options-item" src="{{ asset($photo->preview_img) }}" alt="{{ $photo->title }}"  />
+                                <div class="options-overlay bg-black-75">
+                                    <div class="options-overlay-content">
+                                        <a class="btn btn-sm btn-primary img-lightbox" href="{{ route('photos.show',$photo->id) }}">
+                                            <i class="fa fa-search-plus mr-1"></i> Bax
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                        
                                         </td>
                                         <td class="font-w600">{{ $photo->title }}</td>
                                         <td class="w-50% font-w600">{!! Str::limit($photo->description,'30') !!}</td>
-                                        <td class="">
+                                        <td>
                                              <form action="{{ route('photos.destroy',$photo->id)}}" method="POST" style="display:inline">
                                                   @method('DELETE')
                                                   @csrf
@@ -71,4 +85,9 @@
 
         <!-- Page JS Code -->
         <script src="{{ asset('assets/js/pages/be_tables_datatables.min.js') }}"></script>
+        <!-- Page JS Plugins -->
+        <script src="{{ asset('assets/js/plugins/magnific-popup/jquery.magnific-popup.min.js') }}"></script>
+
+        <!-- Page JS Helpers (Magnific Popup Plugin) -->
+        <script>jQuery(function(){Dashmix.helpers('magnific-popup');});</script>
 @endsection
