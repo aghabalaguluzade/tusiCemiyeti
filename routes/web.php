@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\Blog\NewsController;
+use App\Http\Controllers\Gallery\PhotoController;
+use App\Http\Controllers\Gallery\VideoController;
 use App\Http\Controllers\Honor\MartyrsController;
 use App\Http\Controllers\Pride\FamousPeopleController;
 use Illuminate\Support\Facades\Route;
@@ -17,14 +19,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
-
 Route::prefix('admin')->group(function() {
+    Route::get('/', function () {
+        return view('index');
+    });
     Route::get('/about', [AboutController::class, 'AboutIndex'])->name('AboutIndex');
     Route::post('/about', [AboutController::class, 'AboutUpdate'])->name('AboutUpdate');
     Route::resource('news',NewsController::class);
     Route::resource('famous_people',FamousPeopleController::class);
     Route::resource('martyrs',MartyrsController::class);
+    Route::resource('photos',PhotoController::class);
+    Route::resource('videos',VideoController::class);
 });

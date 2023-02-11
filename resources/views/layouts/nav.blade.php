@@ -113,6 +113,27 @@
                                 </ul>
                             </li>
 
+                            {{-- Gallery --}}
+
+                            <li class="nav-main-item">
+                                <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
+                                    <i class="nav-main-link-icon fa fa-border-all"></i>
+                                    <span class="nav-main-link-name">Qalereya</span>
+                                </a>
+                                <ul class="nav-main-submenu">
+                                    <li class="nav-main-item">
+                                        <a class="nav-main-link" href="{{ route('photos.index') }}">
+                                            <span class="nav-main-link-name">Foto</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-main-item">
+                                        <a class="nav-main-link" href="{{ route('videos.index') }}">
+                                            <span class="nav-main-link-name">Video</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
                             <li class="nav-main-item">
                                 <a class="nav-main-link" href="{{ route('AboutIndex') }}" aria-haspopup="true" aria-expanded="false" href="{{ route('AboutIndex') }}">
                                     <span class="nav-main-link-name">Haqqında</span>
