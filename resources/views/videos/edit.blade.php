@@ -1,38 +1,49 @@
 @extends('layouts.master')
-@section('title', 'Xəbərlər Yarat')
+@section('title', 'Şəhidlər redaktə et')
 @section('content')
      <div class="content">
                     <!-- Elements -->
                     <div class="block block-rounded">
                         <div class="block-header block-header-default">
-                            <h3 class="block-title">Xəbərlər Yarat</h3>
+                            <h3 class="block-title">Şəhidlər redaktə et</h3>
+                            
                         </div>
                         <div class="block-content">
                         @include('settings.errors')
-                            <form action="{{ route('news.store') }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('videos.update',$video->id) }}" method="POST" enctype="multipart/form-data">
                               @csrf
+                              @method('PUT') 
                                 <div class="row push">
                                     <div class="col-lg-12 col-xl-12 overflow-hidden">
+                                    <h6>Cari Rəsm</h6>
+                                        <img src="{{ asset($video->preview_img) }}" style="width:250px; height:200px; margin-bottom:10px" alt="{{ $video->title }}" />  
                                         <div class="form-group">
-                                            <label>Xəbərlər Başlıq Şəkili</label>
+                                            <label>Önizləmə şəkili</label>
                                             <div class="custom-file">
-                                                <input type="file" class="custom-file-input js-custom-file-input-enabled" data-toggle="custom-file-input" id="example-file-input-multiple-custom" name="img" multiple="multiple">
+                                                <input type="file" class="custom-file-input js-custom-file-input-enabled" data-toggle="custom-file-input" id="example-file-input-multiple-custom" name="preview_img" />
+                                                <label class="custom-file-label" for="example-file-input-multiple-custom">Şəkili Seçin...</label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Fotolar Şəkili</label>
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input js-custom-file-input-enabled" data-toggle="custom-file-input" id="example-file-input-multiple-custom" name="image[]" multiple />
                                                 <label class="custom-file-label" for="example-file-input-multiple-custom">Şəkili Seçin...</label>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="example-text-input">Başlıq</label>
-                                            <input type="text" class="form-control" id="example-text-input" name="title" placeholder="Xəbərlər daxil edin..." />
+                                            <input type="text" class="form-control" id="example-text-input" name="title" placeholder="Başlıq daxil edin..." value="{{ $video->title }}" />
                                         </div>
                                         <div class="form-group">
-                                            <label for="js-ckeditor5-classic">Açıqlama</label>
-                                             <textarea class="form-control" id="editor" name="description" rows="4"></textarea>
+                                            <label for="js-ckeditor5-classic">Video linki</label>
+                                            <input type="url" class="form-control" name="url" placeholder="Video linki daxil edin..." value="{{ $video->url }}" />
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group d-flex justify-content-between">
-                                    <a href="{{ route('news.index') }}" class="btn btn-md btn-primary">Geri</a>
-                                    <button type="submit" class="btn btn-md btn-success">Əlavə et</button>
+                                    <a href="{{ route('videos.index') }}" class="btn btn-md btn-primary">Geri</a>
+                                    <button type="submit" class="btn btn-md btn-success">Redaktə et</button>
                                 </div>
                             </form>
                         </div>
@@ -104,4 +115,9 @@
   });
 
 </script>
+<!-- Page JS Plugins -->
+        <script src="{{ asset('assets/js/plugins/magnific-popup/jquery.magnific-popup.min.js') }}"></script>
+
+        <!-- Page JS Helpers (Magnific Popup Plugin) -->
+        <script>jQuery(function(){Dashmix.helpers('magnific-popup');});</script>
 @endsection

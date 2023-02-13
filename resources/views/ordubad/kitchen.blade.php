@@ -1,37 +1,40 @@
 @extends('layouts.master')
-@section('title', 'Xəbərlər Yarat')
+@section('title', 'Mətbəxi')
 @section('content')
      <div class="content">
                     <!-- Elements -->
                     <div class="block block-rounded">
                         <div class="block-header block-header-default">
-                            <h3 class="block-title">Xəbərlər Yarat</h3>
+                            <h3 class="block-title">Mətbəxi</h3>
                         </div>
                         <div class="block-content">
                         @include('settings.errors')
-                            <form action="{{ route('news.store') }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('kitchens.update',1) }}" method="POST" enctype="multipart/form-data">
                               @csrf
+                              @method('put')
                                 <div class="row push">
                                     <div class="col-lg-12 col-xl-12 overflow-hidden">
+                                             @if($kitchen)
+                                                  <img src="{{ asset($kitchen->img) }}" alt="{{ $kitchen->img }}" style="width:250px; height:250px" />
+                                             @endif
                                         <div class="form-group">
-                                            <label>Xəbərlər Başlıq Şəkili</label>
+                                            <label>Başlıq Şəkili</label>
                                             <div class="custom-file">
                                                 <input type="file" class="custom-file-input js-custom-file-input-enabled" data-toggle="custom-file-input" id="example-file-input-multiple-custom" name="img" multiple="multiple">
                                                 <label class="custom-file-label" for="example-file-input-multiple-custom">Şəkili Seçin...</label>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label for="example-text-input">Başlıq</label>
-                                            <input type="text" class="form-control" id="example-text-input" name="title" placeholder="Xəbərlər daxil edin..." />
-                                        </div>
-                                        <div class="form-group">
                                             <label for="js-ckeditor5-classic">Açıqlama</label>
-                                             <textarea class="form-control" id="editor" name="description" rows="4"></textarea>
+                                            @if($kitchen)
+                                             <textarea class="form-control" id="editor" name="description" rows="4" placeholder="Açıqlama daxil et...">{!! $kitchen->description !!}</textarea>
+                                            @else
+                                             <textarea class="form-control" id="editor" name="description" rows="4" placeholder="Açıqlama daxil et..."></textarea>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-group d-flex justify-content-between">
-                                    <a href="{{ route('news.index') }}" class="btn btn-md btn-primary">Geri</a>
+                                <div class="form-group">
                                     <button type="submit" class="btn btn-md btn-success">Əlavə et</button>
                                 </div>
                             </form>
@@ -41,7 +44,7 @@
                 </div>
 @endsection
 @section('scripts')
-     <script>
+    <script>
   var useDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
   tinymce.init({
       selector: '#editor',

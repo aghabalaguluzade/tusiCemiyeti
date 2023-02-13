@@ -1,10 +1,10 @@
 @extends('layouts.master')
-@section('title', 'Fotoların Siyahısı')
+@section('title', 'Videoların Siyahısı')
 @section('content')
      <div class="block block-rounded">
                         <div class="block-header block-header-default">
-                            <h3 class="block-title">Fotoların Siyahısı</h3>
-                              <a href="{{ route('photos.create') }}"><button class="btn btn-primary float-right">Əlavə et</button></a>
+                            <h3 class="block-title">Videoların Siyahısı</h3>
+                              <a href="{{ route('videos.create') }}"><button class="btn btn-primary float-right">Əlavə et</button></a>
                         </div>
                         <div class="block-content block-content-full">
                             <!-- DataTables init on table by adding .js-dataTable-full-pagination class, functionality is initialized in js/pages/be_tables_datatables.min.js which was auto compiled from _js/pages/be_tables_datatables.js -->
@@ -16,55 +16,51 @@
                                 <thead>
                                     <tr role="row">
                                         <th class="text-center sorting_asc" tabindex="0" style="width: 10%;" aria-controls="DataTables_Table_2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="#: activate to sort column descending">#</th>
-                                        <th class="d-sm-table-cell sorting" style="width: 15%;" tabindex="0" aria-controls="DataTables_Table_2" rowspan="1" colspan="1" aria-label="Email: activate to sort column ascending">Önizləmə şəkili</th>
-                                        <th class="d-sm-table-cell sorting" style="width: 20%;" tabindex="0" aria-controls="DataTables_Table_2" rowspan="1" colspan="1" aria-label="Access: activate to sort column ascending">Başlıq</th>
-                                        <th style="width: 35%;" class="sorting" tabindex="0" aria-controls="DataTables_Table_2" rowspan="1" colspan="1" aria-label="Registered: activate to sort column ascending">Haqqında</th>
-                                        <th style="width: 20%;" class="sorting" tabindex="0" aria-controls="DataTables_Table_2" rowspan="1" colspan="1" aria-label="Registered: activate to sort column ascending">Əməliyyatlar</th>
+                                        <th class="d-sm-table-cell sorting" style="width: 20%;" tabindex="0" aria-controls="DataTables_Table_2" rowspan="1" colspan="1" aria-label="Email: activate to sort column ascending">Önizləmə şəkili</th>
+                                        <th class="d-sm-table-cell sorting" style="width: 25%;" tabindex="0" aria-controls="DataTables_Table_2" rowspan="1" colspan="1" aria-label="Access: activate to sort column ascending">Başlıq</th>
+                                        <th style="width: 25%;" class="sorting" tabindex="0" aria-controls="DataTables_Table_2" rowspan="1" colspan="1" aria-label="Registered: activate to sort column ascending">Link</th>
+                                        <th style="width: 25%;" class="sorting" tabindex="0" aria-controls="DataTables_Table_2" rowspan="1" colspan="1" aria-label="Registered: activate to sort column ascending">Əməliyyatlar</th>
                                    </tr>
                                 </thead>
                                 <tbody>
 
 
-                                        @foreach ($photos as $photo)
+                                        @foreach ($videos as $video)
 
 
                                 <tr class="odd">
-                                        <td class="text-center sorting_1">{{ $photo->id }}</td>
+                                        <td class="text-center sorting_1">{{ $video->id }}</td>
                                         <td>
 
 
                     <div class="row items-push js-gallery">
                         <div class="col-md-12 col-lg-12 col-xl-12 animated fadeIn">
                             <div class="options-container fx-item-zoom-in fx-overlay-zoom-out">
-                                <img class="img-fluid options-item" src="{{ asset($photo->preview_img) }}" alt="{{ $photo->title }}" style="height:100px" />
-                            
-                            @foreach ($photo->images as $image)
+                                <img class="img-fluid options-item" src="{{ asset($video->preview_img) }}" alt="{{ $video->title }}" style="height:100px" />
 
                                 <div class="options-overlay bg-black-75">
                                     <div class="options-overlay-content">
-                                        <a class="btn btn-sm btn-primary img-lightbox" href="{{ asset($image->image) }}">
+                                        <a class="btn btn-sm btn-primary img-lightbox video popup-youtube" href="{{ $video->url }}">
                                             <i class="fa fa-search-plus mr-1"></i> Bax
                                         </a>
                                     </div>
                                 </div>
-                                        
-                            @endforeach
-
                             </div>
                         </div>
                         </div>
 
-                        
                                         </td>
-                                        <td class="font-w600">{{ $photo->title }}</td>
-                                        <td class="w-50% font-w600">{!! Str::limit($photo->description,'30') !!}</td>
+                                        <td class="font-w600">{{ $video->title }}</td>
+                                        <td class="w-50% font-w600">
+                                            <a href="{{ $video->url }}">{{ Str::limit($video->url,'30') }}</a>
+                                        </td>
                                         <td>
-                                             <form action="{{ route('photos.destroy',$photo->id)}}" method="POST" style="display:inline">
+                                             <form action="{{ route('videos.destroy',$video->id)}}" method="POST" style="display:inline">
                                                   @method('DELETE')
                                                   @csrf
                                                   <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Silmək istədiyindən əminsən?')">Sil</button>
                                              </form>
-                                             <a href="{{ route('photos.edit',$photo->id) }}" class="btn btn-primary btn-sm">Redaktə et</a>
+                                             <a href="{{ route('videos.edit',$video->id) }}" class="btn btn-primary btn-sm">Redaktə et</a>
                                         </td>
                                    </tr>
 
@@ -94,5 +90,12 @@
         <script src="{{ asset('assets/js/plugins/magnific-popup/jquery.magnific-popup.min.js') }}"></script>
 
         <!-- Page JS Helpers (Magnific Popup Plugin) -->
-        <script>jQuery(function(){Dashmix.helpers('magnific-popup');});</script>
+        {{-- <script>jQuery(function(){Dashmix.helpers('magnific-popup');});</script> --}}
+        <script>
+            $(document).ready(function(){
+    $('.popup-youtube').magnificPopup({
+     type: 'iframe' 
+    });
+  });
+        </script>
 @endsection

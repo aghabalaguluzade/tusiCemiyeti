@@ -78,6 +78,11 @@
                                             <span class="nav-main-link-name">Xəbərlər</span>
                                         </a>
                                     </li>
+                                    <li class="nav-main-item">
+                                        <a class="nav-main-link" href="{{ route('events.index') }}">
+                                            <span class="nav-main-link-name">Tədbirlər</span>
+                                        </a>
+                                    </li>
                                 </ul>
                             </li>
 
@@ -133,6 +138,71 @@
                                     </li>
                                 </ul>
                             </li>
+
+
+                            {{-- Ordubad --}}
+
+                            <li class="nav-main-item">
+                                <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
+                                    <i class="nav-main-link-icon fa fa-border-all"></i>
+                                    <span class="nav-main-link-name">Ordubad</span>
+                                </a>
+                                <ul class="nav-main-submenu">
+                                    <li class="nav-main-item">
+                                        <a class="nav-main-link" href="{{ route('history.index') }}">
+                                            <span class="nav-main-link-name">Tarixi</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-main-item">
+                                        <a class="nav-main-link" href="{{ route('customs_traditions.index') }}">
+                                            <span class="nav-main-link-name">Adət və ənənələri</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-main-item">
+                                        <a class="nav-main-link" href="{{ route('monuments.index') }}">
+                                            <span class="nav-main-link-name">Abidələri</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-main-item">
+                                        <a class="nav-main-link" href="{{ route('folklores.index') }}">
+                                            <span class="nav-main-link-name">Folkloru</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-main-item">
+                                        <a class="nav-main-link" href="{{ route('natures.index') }}">
+                                            <span class="nav-main-link-name">Təbiəti</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-main-item">
+                                        <a class="nav-main-link" href="{{ route('kitchens.index') }}">
+                                            <span class="nav-main-link-name">Mətbəxi</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-main-item">
+                                        <a class="nav-main-link" href="{{ route('floras.index') }}">
+                                            <span class="nav-main-link-name">Florası</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-main-item">
+                                        <a class="nav-main-link" href="{{ route('tourisms.index') }}">
+                                            <span class="nav-main-link-name">Turizmi</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-main-item">
+                                        <a class="nav-main-link" href="{{ route('faunas.index') }}">
+                                            <span class="nav-main-link-name">Faunası</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-main-item">
+                                        <a class="nav-main-link" href="{{ route('hotel_restaurants.index') }}">
+                                            <span class="nav-main-link-name">Otel-Restoran</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            
+                            
+                            {{-- Haqqında --}}
 
                             <li class="nav-main-item">
                                 <a class="nav-main-link" href="{{ route('AboutIndex') }}" aria-haspopup="true" aria-expanded="false" href="{{ route('AboutIndex') }}">
