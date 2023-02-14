@@ -8,79 +8,24 @@ use Illuminate\Http\Request;
 
 class ContactUsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
+    public function contactUsIndex() {
+        $contact_us = ContactUs::find(1);
+        return view('contact.contactUs',compact('contact_us'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+    public function contactUsPost(Request $request) {
+        $request->validate([
+            'location' => 'max:255',
+            'email' => 'email|max:255',
+            'phone' => 'regex:/^([0-9\s\-\+\(\)]*)$/|min:10|max:50',
+        ]);
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+        $data = ContactUs::find(1);
+        $data->location = $request->location;
+        $data->email = $request->email;
+        $data->phone = $request->phone;
+       
+        return redirect()->back()->with($data->save() ? "success" : "error", true);
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\ContactUs  $contactUs
-     * @return \Illuminate\Http\Response
-     */
-    public function show(ContactUs $contactUs)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\ContactUs  $contactUs
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(ContactUs $contactUs)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\ContactUs  $contactUs
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, ContactUs $contactUs)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\ContactUs  $contactUs
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(ContactUs $contactUs)
-    {
-        //
     }
 }

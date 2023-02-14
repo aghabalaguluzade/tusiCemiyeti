@@ -38,32 +38,32 @@
                     <div class="content-side">
                         <ul class="nav-main">
                             <li class="nav-main-item">
-                                <a class="nav-main-link" href="/">
+                                <a class="nav-main-link" href="/admin">
                                     <i class="nav-main-link-icon fa fa-location-arrow"></i>
                                     <span class="nav-main-link-name">Ana Səhifə</span>
                                 </a>
                             </li>
+
+                            {{-- Activities --}}
+
                             <li class="nav-main-item">
                                 <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
-                                    <i class="nav-main-link-icon fa fa-clone"></i>
-                                    <span class="nav-main-link-name">Page Kits</span>
+                                    <i class="nav-main-link-icon fa fa-border-all"></i>
+                                    <span class="nav-main-link-name">Fəaliyyət</span>
                                 </a>
                                 <ul class="nav-main-submenu">
                                     <li class="nav-main-item">
-                                        <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
-                                            <span class="nav-main-link-name">Generic</span>
+                                        <a class="nav-main-link" href="{{ route('activities.index') }}">
+                                            <span class="nav-main-link-name">Fəaliyyət</span>
                                         </a>
-                                        <ul class="nav-main-submenu">
-                                            <li class="nav-main-item">
-                                                <a class="nav-main-link" href="be_pages_generic_blank.html">
-                                                    <span class="nav-main-link-name">Blank</span>
-                                                </a>
-                                            </li>
-                                        </ul>
+                                    </li>
+                                    <li class="nav-main-item">
+                                        <a class="nav-main-link" href="{{ route('creations.index') }}">
+                                            <span class="nav-main-link-name">Yaranma</span>
+                                        </a>
                                     </li>
                                 </ul>
                             </li>
-                            <li class="nav-main-heading">Base</li>
 
                             {{-- Blog --}}
 
@@ -113,6 +113,28 @@
                                     <li class="nav-main-item">
                                         <a class="nav-main-link" href="{{ route('martyrs.index') }}">
                                             <span class="nav-main-link-name">Şəhidlər</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+
+                            {{-- Missiyamız --}}
+
+                            <li class="nav-main-item">
+                                <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
+                                    <i class="nav-main-link-icon fa fa-border-all"></i>
+                                    <span class="nav-main-link-name">Missiyamız</span>
+                                </a>
+                                <ul class="nav-main-submenu">
+                                    <li class="nav-main-item">
+                                        <a class="nav-main-link" href="{{ route('charitables.index') }}">
+                                            <span class="nav-main-link-name">Xeyriyyəçik</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-main-item">
+                                        <a class="nav-main-link" href="{{ route('enlightenments.index') }}">
+                                            <span class="nav-main-link-name">Maarifçilik</span>
                                         </a>
                                     </li>
                                 </ul>
@@ -207,6 +229,15 @@
                             <li class="nav-main-item">
                                 <a class="nav-main-link" href="{{ route('AboutIndex') }}" aria-haspopup="true" aria-expanded="false" href="{{ route('AboutIndex') }}">
                                     <span class="nav-main-link-name">Haqqında</span>
+                                </a>
+                            </li>
+
+
+                            {{-- Bizimlə Əlaqə --}}
+
+                            <li class="nav-main-item">
+                                <a class="nav-main-link" href="{{ route('contactUsIndex') }}" aria-haspopup="true" aria-expanded="false" href="{{ route('AboutIndex') }}">
+                                    <span class="nav-main-link-name">Bizimlə Əlaqə</span>
                                 </a>
                             </li>
 
