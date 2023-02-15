@@ -3,7 +3,7 @@
                 <div class="bg-header-dark">
                     <div class="content-header bg-white-10">
                         <!-- Logo -->
-                        <a class="font-w600 text-white tracking-wide" href="index.html">
+                        <a class="font-w600 text-white tracking-wide" href="{{ route('adminPanel') }}">
                             <span class="smini-hidden">
                                 tusi<span class="opacity-75">Cemiyyeti</span>
                             </span>
@@ -38,7 +38,7 @@
                     <div class="content-side">
                         <ul class="nav-main">
                             <li class="nav-main-item">
-                                <a class="nav-main-link" href="/admin">
+                                <a class="nav-main-link" href="{{ route('adminPanel') }}">
                                     <i class="nav-main-link-icon fa fa-location-arrow"></i>
                                     <span class="nav-main-link-name">Ana Səhifə</span>
                                 </a>

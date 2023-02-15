@@ -3,6 +3,7 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\Activities\ActivityController;
 use App\Http\Controllers\Activities\CreationController;
+use App\Http\Controllers\Auth\LoginAdminController;
 use App\Http\Controllers\Blog\EventsController;
 use App\Http\Controllers\Blog\NewsController;
 use App\Http\Controllers\Contact\ContactController;
@@ -23,6 +24,7 @@ use App\Http\Controllers\Ordubad\MonumentsController;
 use App\Http\Controllers\Ordubad\NatureController;
 use App\Http\Controllers\Ordubad\TourismController;
 use App\Http\Controllers\Pride\FamousPeopleController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -36,10 +38,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::prefix('admin')->group(function() {
-    Route::get('/', function () {
-        return view('index');
-    });
+Route::middleware(['auth'])->prefix('admin')->group(function (){
+    Route::get('/dashboard', function () {
+        return view('admin');   
+    })->name('adminPanel');
     Route::get('/about', [AboutController::class, 'AboutIndex'])->name('AboutIndex');
     Route::post('/about', [AboutController::class, 'AboutUpdate'])->name('AboutUpdate');
     Route::resource('activities',ActivityController::class);
@@ -67,3 +69,8 @@ Route::prefix('admin')->group(function() {
     Route::resource('enlightenments',EnlightenmentController::class);
     Route::resource('charitables',CharitableController::class);
 });
+
+
+Route::get('/admin_login',[LoginAdminController::class,'AdminLoginIndex'])->name('AdminLoginIndex');
+Route::post('/admin_login',[LoginAdminController::class,'AdminLoginPost'])->name('AdminLoginPost');
+Route::get('/admin_logout',[LoginAdminController::class,'AdminLogout'])->name('AdminLogout');
