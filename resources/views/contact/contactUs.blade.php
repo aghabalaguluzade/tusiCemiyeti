@@ -16,11 +16,11 @@
                                     <div class="col-lg-12 col-xl-12 overflow-hidden">
                                     <div class="form-group">
                                             <label for="js-ckeditor5-classic">E-Poçt</label>
-                                            <input type="email" class="form-control" name="email" />
+                                            <input type="email" class="form-control" name="email" required />
                                         </div>
                                         <div class="form-group">
                                             <label for="js-ckeditor5-classic">Telefon</label>
-                                            <input type="tel" class="form-control" name="phone" />
+                                            <input type="tel" class="form-control" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required />
                                         </div>
                                         <div class="form-group">
                                             <label for="js-ckeditor5-classic">Ünvan</label>
