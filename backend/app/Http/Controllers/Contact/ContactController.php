@@ -15,7 +15,8 @@ class ContactController extends Controller
      */
     public function index()
     {
-        //
+        $contacts = Contact::all();
+        return view('contact.contact', compact('contacts'));
     }
 
     /**
@@ -81,6 +82,12 @@ class ContactController extends Controller
      */
     public function destroy(Contact $contact)
     {
-        //
+        $referer = isset($_SERVER["HTTP_REFERER"]);
+        if(!$referer) return redirect()->back();
+
+        if($contact) {
+            return redirect()->back()->with($contact->delete() ? "success" : "errror", true);
+        }
+        return redirect()->back()->with("not_found",true);
     }
 }

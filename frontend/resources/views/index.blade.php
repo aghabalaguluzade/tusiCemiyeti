@@ -13,7 +13,7 @@
 
     <section class="events-blog mt-5">
         <div class="container mt-4">
-            <h2 class="font-italic text-center">Tədbirlər</h2>       
+            <h2 class="font-italic text-center">Tədbirlər</h2>
              <div class="row main-row">
              @foreach ($events as $event)
                  <div class="col-lg-4 col-md-6">
@@ -24,7 +24,7 @@
                             <p class="card-text">{!!  Str::limit($event->description, 150, '...') !!}</p>
                             <h6>{{ $event->created_at }}</h6>
                             <a href="#" class="buton">Ətraflı</a>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -40,9 +40,9 @@
                 </div>
             </div>
             <div class="row d-flex blogs">
-                
+
                 @foreach ($news as $new)
-                    
+
                 <div class="col-lg-6 d-flex align-items-stretch mb-2">
                     <div class="blog-start d-flex">
                         <img src="{{ config('constant.path') . $new->img }}" class="img-fluid"
@@ -72,13 +72,13 @@
                 <li class="card">
                     <div>
                         <div class="column">
-                            <img class="icon" src="{{ config('constant.path') . $activities->img }}" alt="" />
+{{--                            <img class="icon" src="{{ config('constant.path') . $activities->img }}" alt="" />--}}
                             <div class="column-text">
                                 <h2>Fəaliyyət</h2>
                             </div>
                         </div>
                         <div class="card-content">
-                            <p>{!!  Str::limit($activities->description, 160, '...') !!}</p>
+{{--                            <p>{!!  Str::limit($activities->description, 160, '...') !!}</p>--}}
                         </div>
                     </div>
                     <div class="card-link-wrapper justify-content-center">
@@ -88,13 +88,13 @@
                 <li class="card">
                     <div>
                         <div class="column">
-                            <img class="icon" src="{{ config('constant.path') . $creation->img }}" alt="" />
+{{--                            <img class="icon" src="{{ config('constant.path') . $creation->img }}" alt="" />--}}
                             <div class="column-text">
                                 <h2>Yaranma</h2>
                             </div>
                         </div>
                         <div class="card-content">
-                            <p>{!!  Str::limit($creation->description, 160, '...') !!}</p>
+{{--                            <p>{!!  Str::limit($creation->description, 160, '...') !!}</p>--}}
                         </div>
                     </div>
                     <div class="card-link-wrapper justify-content-center">

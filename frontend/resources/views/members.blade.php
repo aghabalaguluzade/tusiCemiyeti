@@ -1,35 +1,12 @@
 @extends('layouts.master')
-@section('title', 'Əlaqə')
+@section('title', 'Üzv ol')
 @section('content')
      <section class="contact-page">
-                <h2>Bizimlə Əlaqə</h2>
+                <h2>Üzv ol</h2>
                 <div class="container">
-                    
-                    @if($contacts)
-                        
-                        @foreach ($contacts as $contact)
-                            <div class="contact-info">
-                        <div class="card">
-                            <i class="fa-solid fa-location-dot"></i>
-                            <p>{{ $contact->location }}</p>
-                        </div>
-                        <div class="card">
-                            <i class="fa-solid fa-phone"></i>
-                            <p>{{ $contact->phone }}</p>
-                        </div>
-                        <div class="card">
-                            <i class="fa-solid fa-envelope"></i>
-                            <p>{{ $contact->email }}</p>
-                        </div>
-                    </div>
-                        @endforeach
-
-                    @endif
-
-
                     <div class="contact-form">
                         @include('layouts.errors')
-                        <form action="{{ route('contactPost') }}" method="POST">
+                        <form action="{{ route('membersPost') }}" method="POST">
                             @csrf
                             <div class="row">
                                 <h2> Münasibətinizə açığıq </h2>

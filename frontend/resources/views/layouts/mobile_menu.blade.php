@@ -1,7 +1,7 @@
 <div class="mobile_menu">
     <div id="list_btn"></div>
-    <div class="header_text">
-        <h1>
+    <div class="header_text_mobile">
+        <h1 class="animate_text">
             <span>“Ordubad</span>
             <span>Azərbaycanın </span>
             <span> incisidir.”</span>

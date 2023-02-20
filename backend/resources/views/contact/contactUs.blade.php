@@ -11,20 +11,19 @@
                         @include('settings.errors')
                             <form action="{{ route('contactUsPost') }}" method="POST" enctype="multipart/form-data">
                               @csrf
-                              @method('put')
                                 <div class="row push">
                                     <div class="col-lg-12 col-xl-12 overflow-hidden">
                                     <div class="form-group">
                                             <label for="js-ckeditor5-classic">E-Poçt</label>
-                                            <input type="email" class="form-control" name="email" required />
+                                            <input type="email" class="form-control" name="email" required value="{{ $contact_us->email }}" />
                                         </div>
                                         <div class="form-group">
                                             <label for="js-ckeditor5-classic">Telefon</label>
-                                            <input type="tel" class="form-control" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required />
+                                            <input type="tel" class="form-control" name="phone" pattern="[0-9]{10}" required value="{{ $contact_us->phone }}" />
                                         </div>
                                         <div class="form-group">
                                             <label for="js-ckeditor5-classic">Ünvan</label>
-                                             <textarea class="form-control" name="location" rows="4" placeholder="Ünvanı daxil et..."></textarea>
+                                             <textarea class="form-control" name="location" rows="4" placeholder="Ünvanı daxil et...">{{ $contact_us->location }}</textarea>
                                         </div>
                                     </div>
                                 </div>

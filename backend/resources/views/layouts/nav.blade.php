@@ -241,6 +241,24 @@
                                 </a>
                             </li>
 
+
+                            {{-- Əlaqə --}}
+
+                            <li class="nav-main-item">
+                                <a class="nav-main-link" href="{{ route('contacts.index') }}" aria-haspopup="true" aria-expanded="false" href="{{ route('AboutIndex') }}">
+                                    <span class="nav-main-link-name">Əlaqə</span>
+                                </a>
+                            </li>
+
+
+                            {{-- Üzv ol --}}
+
+                            <li class="nav-main-item">
+                                <a class="nav-main-link" href="{{ route('memberIndex') }}" aria-haspopup="true" aria-expanded="false" href="{{ route('AboutIndex') }}">
+                                    <span class="nav-main-link-name">Üzv ol</span>
+                                </a>
+                            </li>
+
                         </ul>
                     </div>
                     <!-- END Side Navigation -->

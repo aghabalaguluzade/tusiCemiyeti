@@ -9,9 +9,8 @@
             </div>
           </div>
           <div class="row d-flex blogs">
-            
+
             @foreach ($news as $new)
-              
 
             <div class="col-lg-6 d-flex align-items-stretch mb-2">
               <div class="blog-start d-flex">
@@ -28,7 +27,7 @@
                 </div>
               </div>
             </div>
-      
+
             @endforeach
 
           </div>

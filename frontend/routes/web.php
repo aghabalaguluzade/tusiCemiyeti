@@ -3,8 +3,11 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\Blog\EventController;
 use App\Http\Controllers\Blog\NewsController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Gallery\PhotoController;
+use App\Http\Controllers\HeroesController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MemberController;
 use App\Http\Controllers\OrdubadController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,12 +23,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/heroes', function () {
-    return view('heroes');
-})->name('heroes');
-Route::get('/contact', function () {
-    return view('contact');
-})->name('contact');
 Route::get('/videos', function () {
     return view('videos');
 })->name('videos');
@@ -64,3 +61,8 @@ Route::get('/news/{id}',[NewsController::class, 'newsShow'])->name('newsDetail')
 Route::get('/event-blog',[EventController::class, 'eventIndex'])->name('event-blog');
 Route::get('/event-blog/{id}',[EventController::class, 'eventShow'])->name('eventShow');
 Route::get('/photo', [PhotoController::class, 'photoIndex'])->name('photo');
+Route::get('/heroes', [HeroesController::class, 'heroesIndex'])->name('heroes');
+Route::get('/contact', [ContactController::class, 'contactIndex'])->name('contact');
+Route::post('/contact', [ContactController::class, 'contactPost'])->name('contactPost');
+Route::get('/members', [MemberController::class, 'membersIndex'])->name('members');
+Route::post('/members', [MemberController::class, 'membersPost'])->name('membersPost');
