@@ -18,14 +18,17 @@ use App\Http\Controllers\Ordubad\Customs_TraditionsController;
 use App\Http\Controllers\Ordubad\FaunaController;
 use App\Http\Controllers\Ordubad\FloraController;
 use App\Http\Controllers\Ordubad\FolkloreController;
+use App\Http\Controllers\Ordubad\General_InformationController;
 use App\Http\Controllers\Ordubad\HistoryController;
 use App\Http\Controllers\Ordubad\Hotel_RestaurantController;
 use App\Http\Controllers\Ordubad\KitchenController;
 use App\Http\Controllers\Ordubad\MonumentsController;
 use App\Http\Controllers\Ordubad\NatureController;
+use App\Http\Controllers\Ordubad\ProductionController;
 use App\Http\Controllers\Ordubad\TourismController;
 use App\Http\Controllers\Pride\FamousPeopleController;
-use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\StructureController;
+use App\Http\Controllers\ViewController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -39,7 +42,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware(['auth'])->group(function (){
+Route::middleware(['auth','admin'])->group(function (){
     Route::get('/', function () {
         return view('admin');   
     })->name('adminPanel');
@@ -69,8 +72,12 @@ Route::middleware(['auth'])->group(function (){
     Route::resource('monuments',MonumentsController::class);
     Route::resource('natures',NatureController::class);
     Route::resource('tourisms',TourismController::class);
+    Route::resource('productions',ProductionController::class);
+    Route::resource('general_information',General_InformationController::class);
     Route::resource('enlightenments',EnlightenmentController::class);
     Route::resource('charitables',CharitableController::class);
+    Route::resource('structures', StructureController::class);
+    Route::resource('views', ViewController::class);
 });
 
 

@@ -19,4 +19,15 @@ class HomeController extends Controller
         $about = About::select('description')->first();
         return view('index',compact('events','news','activities','creation','about'));
     }
+
+    public function searchIndex() {
+        $search = request()->query('search');
+        
+        if($search) {
+            $news = News::where('title', 'LIKE', "%{$search}%")->simplePaginate(3);
+        }else {
+            $news = News::simplePaginate(3);
+        }
+        return view('news')->with('news',$news);
+    }
 }

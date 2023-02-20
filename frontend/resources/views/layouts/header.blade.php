@@ -16,8 +16,8 @@
                                 <span> incisidir.”</span>
                             </h1>
                         </div>
-                        <form action="#" class="search-form">
-                            <input type="search" class="search-input" placeholder="Axtar..."/>
+                        <form action="{{ route('search') }}" method="GET" class="search-form">
+                            <input type="search" class="search-input" name="search" placeholder="Axtar... "/>
                             <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
                                  xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="11.7666" cy="11.7666" r="8.98856" stroke="#929292" stroke-width="2"
@@ -49,10 +49,10 @@
                                 <div class="sub-menu">
                                     <ul>
                                         <li>
-                                            <a href="">Struktur </a>
+                                            <a href="{{ route('structure') }}">Struktur </a>
                                         </li>
                                         <li>
-                                            <a href="">Baxışımız </a>
+                                            <a href="{{ route('view') }}">Baxışımız </a>
                                         </li>
                                         <li>
                                             <a href="">Tusi intellektual klubu </a>
@@ -87,7 +87,7 @@
                                     <div class="d-flex">
                                         <ul>
                                             <li>
-                                                <a>Ümumi məlumat </a>
+                                                <a href="{{ route('general_information') }}">Ümumi məlumat </a>
                                             </li>
                                             <li>
                                                 <a href="{{ route('history') }}">Tarixi </a>
@@ -120,7 +120,7 @@
                                                 <a href="{{ route('hotel_restaurant') }}">Otel-Restoran</a>
                                             </li>
                                             <li>
-                                                <a href="{{ route('kitchen') }}">İstehsal</a>
+                                                <a href="{{ route('production') }}">İstehsal</a>
                                             </li>
                                             <li>
                                                 <a href="{{ route('kitchen') }}">Mətbəxi</a>

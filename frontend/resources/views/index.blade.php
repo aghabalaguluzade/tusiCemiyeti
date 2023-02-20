@@ -3,9 +3,11 @@
     <section class="slider-home">
         <div class="bg-opacity">
             <div class="content">
-                <h1>
-                    {!!  Str::limit($about->description, 150, '...') !!}
-                </h1>
+                @if($about)
+                    <h1>
+                        {!!  Str::limit($about->description, 150, '...') !!}
+                    </h1>
+                @endif
                 <a class="custom-btn" href="{{ route('about') }}"> Davamını oxu </a>
             </div>
         </div>
@@ -15,20 +17,22 @@
         <div class="container mt-4">
             <h2 class="font-italic text-center">Tədbirlər</h2>
              <div class="row main-row">
-             @foreach ($events as $event)
-                 <div class="col-lg-4 col-md-6">
-                    <div class="card p-3">
-                        <img src="{{ config('constant.path') . $event->img }}" alt="{{ $event->title }}" class="card-img-top shadow bg-white rounded">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ $event->title }}</h5>
-                            <p class="card-text">{!!  Str::limit($event->description, 150, '...') !!}</p>
-                            <h6>{{ $event->created_at }}</h6>
-                            <a href="{{ route('eventShow', $event->id) }}" class="buton">Ətraflı</a>
+                @if($events)
+                       @foreach ($events as $event)
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card p-3">
+                            <img src="{{ config('constant.path') . $event->img }}" alt="{{ $event->title }}" class="card-img-top shadow bg-white rounded">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ $event->title }}</h5>
+                                <p class="card-text">{!!  Str::limit($event->description, 150, '...') !!}</p>
+                                <h6>{{ $event->created_at }}</h6>
+                                <a href="{{ route('eventShow', $event->id) }}" class="buton">Ətraflı</a>
 
+                            </div>
                         </div>
                     </div>
-                </div>
-             @endforeach
+                @endforeach
+                @endif
             </div>
     </div></section>
 
@@ -41,7 +45,8 @@
             </div>
             <div class="row d-flex blogs">
 
-                @foreach ($news as $new)
+                @if($news)
+                    @foreach ($news as $new)
 
                 <div class="col-lg-6 d-flex align-items-stretch mb-2">
                     <div class="blog-start d-flex">
@@ -61,6 +66,7 @@
                 </div>
 
                 @endforeach
+                @endif
 
             </div>
         </div>
@@ -69,7 +75,8 @@
     <section class="home-cards">
         <div class="container">
             <ul class="cards">
-                <li class="card">
+                @if($activities)
+                    <li class="card">
                     <div>
                         <div class="column">
                            <img class="icon" src="{{ config('constant.path') . $activities->img }}" alt="" />
@@ -82,10 +89,13 @@
                         </div>
                     </div>
                     <div class="card-link-wrapper justify-content-center">
-                        <a href="" class="custom-btn active">Learn More</a>
+                        <a href="{{ route('activity') }}" class="custom-btn active">Learn More</a>
                     </div>
                 </li>
-                <li class="card">
+                @endif
+                
+                @if($creation)
+                    <li class="card">
                     <div>
                         <div class="column">
                            <img class="icon" src="{{ config('constant.path') . $creation->img }}" alt="" />
@@ -98,9 +108,10 @@
                         </div>
                     </div>
                     <div class="card-link-wrapper justify-content-center">
-                        <a href="" class="custom-btn active">Learn More</a>
+                        <a href="{{ route('creation') }}" class="custom-btn active">Learn More</a>
                     </div>
                 </li>
+                @endif
 
                 <li class="card">
                     <div>

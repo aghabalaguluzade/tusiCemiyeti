@@ -171,6 +171,11 @@
                                 </a>
                                 <ul class="nav-main-submenu">
                                     <li class="nav-main-item">
+                                        <a class="nav-main-link" href="{{ route('general_information.index') }}">
+                                            <span class="nav-main-link-name">Ümumi məlumat</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-main-item">
                                         <a class="nav-main-link" href="{{ route('history.index') }}">
                                             <span class="nav-main-link-name">Tarixi</span>
                                         </a>
@@ -201,6 +206,11 @@
                                         </a>
                                     </li>
                                     <li class="nav-main-item">
+                                        <a class="nav-main-link" href="{{ route('productions.index') }}">
+                                            <span class="nav-main-link-name">İstehsal</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-main-item">
                                         <a class="nav-main-link" href="{{ route('floras.index') }}">
                                             <span class="nav-main-link-name">Florası</span>
                                         </a>
@@ -226,10 +236,29 @@
                             
                             {{-- Haqqında --}}
 
+
                             <li class="nav-main-item">
-                                <a class="nav-main-link" href="{{ route('AboutIndex') }}" aria-haspopup="true" aria-expanded="false" href="{{ route('AboutIndex') }}">
+                                <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
+                                    <i class="nav-main-link-icon fa fa-border-all"></i>
                                     <span class="nav-main-link-name">Haqqında</span>
                                 </a>
+                                <ul class="nav-main-submenu">
+                                    <li class="nav-main-item">
+                                        <a class="nav-main-link" href="{{ route('AboutIndex') }}">
+                                            <span class="nav-main-link-name">Haqqında</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-main-item">
+                                        <a class="nav-main-link" href="{{ route('structures.index') }}">
+                                            <span class="nav-main-link-name">Struktur</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-main-item">
+                                        <a class="nav-main-link" href="{{ route('views.index') }}">
+                                            <span class="nav-main-link-name">Baxışımız</span>
+                                        </a>
+                                    </li>
+                                </ul>
                             </li>
 
 
