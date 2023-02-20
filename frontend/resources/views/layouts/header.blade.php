@@ -3,8 +3,8 @@
         <nav>
             <div class="row">
                 <div class="col-1">
-                    <a href="index.htm">
-                        <img src="assets/img/logo.jpeg" class="logo" alt="logo"/>
+                    <a href="/">
+                        <img src="assets/img/logo.jpeg" class="logo" alt="logo" />
                     </a>
                 </div>
                 <div class="col-11">

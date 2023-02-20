@@ -4,9 +4,9 @@
         <div class="bg-opacity">
             <div class="content">
                 <h1>
-                    THE VOYAGER SCHOLARSHIP FOR PUBLIC SERVICE APPLICATION IS OPEN!
+                    {!!  Str::limit($about->description, 150, '...') !!}
                 </h1>
-                <a class="custom-btn" href="about.htm"> Learn More </a>
+                <a class="custom-btn" href="{{ route('about') }}"> Davamını oxu </a>
             </div>
         </div>
     </section>
@@ -23,7 +23,7 @@
                             <h5 class="card-title">{{ $event->title }}</h5>
                             <p class="card-text">{!!  Str::limit($event->description, 150, '...') !!}</p>
                             <h6>{{ $event->created_at }}</h6>
-                            <a href="#" class="buton">Ətraflı</a>
+                            <a href="{{ route('eventShow', $event->id) }}" class="buton">Ətraflı</a>
 
                         </div>
                     </div>
@@ -51,8 +51,8 @@
                             <h3 class="mb-3 heading">
                                 <a href="#">{{ $new->title }}</a>
                             </h3>
-                            <p class="text-justify">{!!  Str::limit($event->description, 150, '...') !!}</p>
-                            <a href="#" class="custom-btn active">
+                            <p class="text-justify">{!!  Str::limit($new->description, 150, '...') !!}</p>
+                            <a href="{{ route('newsDetail',$new->id) }}" class="custom-btn active">
                                 Ətraflı
                                 <i id="icon" class="fas fa-long-arrow-alt-right"></i>
                             </a>
@@ -72,13 +72,13 @@
                 <li class="card">
                     <div>
                         <div class="column">
-{{--                            <img class="icon" src="{{ config('constant.path') . $activities->img }}" alt="" />--}}
+                           <img class="icon" src="{{ config('constant.path') . $activities->img }}" alt="" />
                             <div class="column-text">
                                 <h2>Fəaliyyət</h2>
                             </div>
                         </div>
                         <div class="card-content">
-{{--                            <p>{!!  Str::limit($activities->description, 160, '...') !!}</p>--}}
+                           <p>{!!  Str::limit($activities->description, 160, '...') !!}</p>
                         </div>
                     </div>
                     <div class="card-link-wrapper justify-content-center">
@@ -88,13 +88,13 @@
                 <li class="card">
                     <div>
                         <div class="column">
-{{--                            <img class="icon" src="{{ config('constant.path') . $creation->img }}" alt="" />--}}
+                           <img class="icon" src="{{ config('constant.path') . $creation->img }}" alt="" />
                             <div class="column-text">
                                 <h2>Yaranma</h2>
                             </div>
                         </div>
                         <div class="card-content">
-{{--                            <p>{!!  Str::limit($creation->description, 160, '...') !!}</p>--}}
+                           <p>{!!  Str::limit($creation->description, 160, '...') !!}</p>
                         </div>
                     </div>
                     <div class="card-link-wrapper justify-content-center">

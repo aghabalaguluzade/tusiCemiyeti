@@ -8,7 +8,9 @@ use App\Http\Controllers\Gallery\PhotoController;
 use App\Http\Controllers\HeroesController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MemberController;
+use App\Http\Controllers\MissionController;
 use App\Http\Controllers\OrdubadController;
+use App\Http\Controllers\VideosController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,25 +25,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/videos', function () {
-    return view('videos');
-})->name('videos');
+
 Route::get('/activity', function () {
     return view('activity');
 })->name('activity');
 Route::get('/creation', function () {
     return view('activity');
 })->name('creation');
-Route::get('/charitable', function () {
-    return view('mission');
-})->name('charitable');
-Route::get('/enlightenment', function () {
-    return view('mission');
-})->name('enlightenment');
 Route::get('/famous-men', function () {
     return view('famous-men');
 })->name('famous-men');
-
 
 
 Route::get('/', [HomeController::class,'homeIndex'])->name('homeIndex');
@@ -61,8 +54,11 @@ Route::get('/news/{id}',[NewsController::class, 'newsShow'])->name('newsDetail')
 Route::get('/event-blog',[EventController::class, 'eventIndex'])->name('event-blog');
 Route::get('/event-blog/{id}',[EventController::class, 'eventShow'])->name('eventShow');
 Route::get('/photo', [PhotoController::class, 'photoIndex'])->name('photo');
+Route::get('/videos', [VideosController::class, 'videosIndex'])->name('videos');
 Route::get('/heroes', [HeroesController::class, 'heroesIndex'])->name('heroes');
 Route::get('/contact', [ContactController::class, 'contactIndex'])->name('contact');
 Route::post('/contact', [ContactController::class, 'contactPost'])->name('contactPost');
 Route::get('/members', [MemberController::class, 'membersIndex'])->name('members');
 Route::post('/members', [MemberController::class, 'membersPost'])->name('membersPost');
+Route::get('/charitable', [MissionController::class, 'missionIndex'])->name('charitable');
+Route::get('/enlightenment', [MissionController::class, 'missionIndex'])->name('enlightenment');

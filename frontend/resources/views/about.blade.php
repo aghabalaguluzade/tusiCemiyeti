@@ -16,17 +16,4 @@
     </div>
     @endif
 
-
-    <div class="detail_body">
-        <div class="container">
-            <div class="second_detail_section">
-                <div class="left_part">
-                    <img style="border-radius: 10px;" src="assets/img/about.jpeg" alt="left_part_img">
-                </div>
-                <div class="right_part">
-                    <p></p>
-                </div>
-            </div>
-        </div>
-    </div>
 @endsection
