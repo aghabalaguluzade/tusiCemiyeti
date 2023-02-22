@@ -121,16 +121,16 @@ class EventsController extends Controller
      * @param  \App\Models\Events  $events
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Events $events)
+    public function destroy(Events $event)
     {
         $referer = isset($_SERVER["HTTP_REFERER"]);
         if(!$referer) return redirect()->back();
 
-        if($events) {
-            if(file_exists($events->img)) {
-                unlink($events->img);
+        if($event) {
+            if(file_exists($event->img)) {
+                unlink($event->img);
             }
-            return redirect()->back()->with($events->delete() ? "success" : "error", true);
+            return redirect()->back()->with($event->delete() ? "success" : "error", true);
         }
         return redirect()->back()->with("not_found", true);
     }
