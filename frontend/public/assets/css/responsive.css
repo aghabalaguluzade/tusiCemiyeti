@@ -35,8 +35,22 @@
 }
 
 @media only screen and (max-width: 992px) {
+
+    .tel{
+        display: none;
+    }
+
+    .events-blog .card {
+       height: auto;
+    }
+
+    .custom_table{
+        display: block;
+    }
+
     .header_text_mobile {
         display: block;
+        margin-right: 50px;
     }
     .respons {
         display: none !important;
@@ -67,7 +81,7 @@
         position: relative;
         overflow: hidden;
         background-image: url("../img/mobile_bg.jpeg");
-        background-position: 30%;
+        /*background-position: 30%;*/
         background-size: cover;
         background-repeat: no-repeat;
         box-shadow: 5px 15px 30px rgb(5 13 54 / 3%);
@@ -122,6 +136,7 @@
         box-sizing: border-box;
         cursor: pointer;
         transition: all 0.3s ease-in;
+        margin-right: 5px;
     }
 
     .mobile_search input {
@@ -155,7 +170,7 @@
         color: #fff;
         font-size: 40px;
         transition: all 0.3s ease-in;
-        margin-left: 15px;
+        /*margin-left: 15px;*/
     }
     #nav {
         position: absolute;
@@ -163,21 +178,24 @@
         list-style-type: none;
         margin: 100px 0 0 20px;
         padding: 0;
-        overflow: hidden;
+        height: 600px;
+        overflow: scroll;
     }
     #nav li a {
         height: 30px;
         color: #fff;
         text-decoration: none;
         display: inline-block;
-        margin: 3px 0;
+        margin: 10px 0;
         transition: all 0.3s ease-in-out;
         border-bottom: 1px dotted rgb(239, 239, 129);
         cursor: pointer;
+        font-size: 18px;
+        font-weight: bold;
     }
     #mobile_navbar.navigation #mobile_body_content {
         transform: scale(0.7);
-        margin-left: 180px;
+        margin-left: 200px;
     }
     .mobile_social ul li {
         list-style-type: none;
@@ -191,8 +209,8 @@
     }
     .mobile_social {
         position: absolute;
-        bottom: 0;
-        left: 0;
+        bottom: 30px;
+        left: -16px;
     }
     .mobile_subcategory_ul li {
         list-style-type: none;
@@ -248,6 +266,8 @@
 
     #nav i {
         color: #fff;
+        font-size: 15px;
+        margin-left: 5px;
     }
 
     .quote-row {
@@ -260,14 +280,15 @@
 
     .mobile_menu {
         background-color: #30121c;
-        padding: 0;
+        padding: 10px 0;
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
 
-    #logo {
-        width: 27%;
+    #logo img{
+        width: 185px;
+        margin-left: 10px;
     }
 
     .mobile_menu span:nth-child(1) {
@@ -299,9 +320,24 @@
 }
 
 @media only screen and (max-width: 768px) {
+    #list_btn::before {
+        font-size: 30px;
+    }
+    #logo img{
+        width: 135px;
+    }
+    .header_text_mobile {
+        margin-right: 0;
+    }
+    .detail-fam img{
+        height: auto;
+    }
 }
 
 @media only screen and (max-width: 576px) {
+    .left_part img{
+        width: 100%;
+    }
     .blog-start {
         flex-direction: column;
     }
@@ -313,38 +349,51 @@
         width: 100%;
     }
 
-    #logo {
-        width: 35%;
-    }
+    /*#logo {*/
+    /*    width: 35%;*/
+    /*}*/
 
     .home-cards .cards {
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
     }
-    .mobile_menu span:nth-child(1) {
-        position: relative;
-        top: -20px;
-    }
+        /*.mobile_menu span:nth-child(1) {*/
+        /*    position: relative;*/
+        /*    top: -20px;*/
+        /*}*/
 
-    .mobile_menu span:nth-child(2) {
-        position: relative;
-        left: -39px;
-        top: 12px;
-    }
+        /*.mobile_menu span:nth-child(2) {*/
+        /*    position: relative;*/
+        /*    left: -39px;*/
+        /*    top: 12px;*/
+        /*}*/
 
-    .mobile_menu span:nth-child(3) {
-        position: relative;
-        top: 7px;
-        left: 96px;
-    }
+        /*.mobile_menu span:nth-child(3) {*/
+        /*    position: relative;*/
+        /*    top: 7px;*/
+        /*    left: 96px;*/
+        /*}*/
 
     .mobile_menu {
         padding: 14px 0;
     }
 }
 
+@media only screen and (max-width: 500px) {
+    .header_text_mobile{
+        display: none;
+    }
+}
+
+
 @media only screen and (max-width: 450px) {
+    #list_btn::before {
+        font-size: 25px;
+    }
+    #logo img{
+        width: 100px;
+    }
     #list_btn::before {
         font-size: 25px;
     }
@@ -361,7 +410,4 @@
         font-size: 20px;
     }
 
-    .mobile_menu {
-        padding: 0;
-    }
 }

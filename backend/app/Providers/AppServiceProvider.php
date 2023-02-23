@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Models\Contact;
+use App\Models\Member;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -23,6 +25,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $members = Member::latest('created_at')->where('read','0')->count();
+        $contacts = Contact::latest('created_at')->where('read','0')->count();
+        view()->share('membersCount',$members);
+        view()->share('contactsCount',$contacts);
     }
 }

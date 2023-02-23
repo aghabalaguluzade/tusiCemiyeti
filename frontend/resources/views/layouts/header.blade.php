@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-1">
                     <a href="/">
-                        <img src="assets/img/logo.jpeg" class="logo" alt="logo" />
+                        <img src="{{asset('assets/img/logo.png')}}" class="logo" alt="logo" />
                     </a>
                 </div>
                 <div class="col-11">
@@ -49,22 +49,28 @@
                                 <div class="sub-menu">
                                     <ul>
                                         <li>
+                                            <a href="{{ route('about') }}">Haqqımızda </a>
+                                        </li>
+                                        <li>
                                             <a href="{{ route('structure') }}">Struktur </a>
                                         </li>
                                         <li>
                                             <a href="{{ route('view') }}">Baxışımız </a>
                                         </li>
-                                        <li>
-                                            <a href="">Tusi intellektual klubu </a>
-                                        </li>
+{{--                                        <li>--}}
+{{--                                            <a href="">Tusi intellektual klubu </a>--}}
+{{--                                        </li>--}}
                                     </ul>
                                 </div>
                             </li>
                             <li>
-                                <a href="{{ route('activity') }}"> Fəaliyyət </a>
+                                <a href=""> Fəaliyyət </a>
                                 <i class="fa-solid fa-chevron-down"></i>
                                 <div class="sub-menu">
                                     <ul>
+                                        <li>
+                                            <a href="{{ route('activity') }}">Fəaliyyət </a>
+                                        </li>
                                         <li>
                                             <a href="{{ route('charitable') }}">Xeyriyyəçilik </a>
                                         </li>

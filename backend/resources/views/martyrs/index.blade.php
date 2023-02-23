@@ -28,7 +28,7 @@
                                         @foreach ($martyrs as $martyr)
                                     
                                 <tr class="odd">
-                                        <td class="text-center sorting_1">{{ $martyr->id }}</td>
+                                        <td class="text-center sorting_1">{{ $loop->iteration }}</td>
                                         <td>
                                              <img src="{{ asset($martyr->img) }}" alt="{{ $martyr->name }}" style="width:100px;height:100px" />
                                         </td>

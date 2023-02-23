@@ -9,7 +9,7 @@
                         <form action="{{ route('membersPost') }}" method="POST">
                             @csrf
                             <div class="row">
-                                <h2> Münasibətinizə açığıq </h2>
+                                <h2> Formu doldurun və üzv olun </h2>
                                 <span> Qeyd: Tələb olunan məlumatlar qorunur. </span>
                                 <div class="col-sm-6">
                                     <div class="form-group">
@@ -23,7 +23,7 @@
                                         <input id="email" class="form-control" type="email" placeholder="test@gmail.com" name="email" required />
                                     </div>
                                 </div>
-                                <div class="col-sm-6">
+                                <div class="col-sm-8 offset-2">
                                     <div class="form-group">
                                         <label for="phone">Telefon nömrəsi</label>
                                         <input id="phone" class="form-control" type="number" placeholder="+994 xx xxx xx xx" name="phone" required />

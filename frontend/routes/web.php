@@ -55,6 +55,7 @@ Route::post('/members', [MemberController::class, 'membersPost'])->name('members
 Route::get('/charitable', [MissionController::class, 'missionIndex'])->name('charitable');
 Route::get('/enlightenment', [MissionController::class, 'missionIndex'])->name('enlightenment');
 Route::get('/famous-men', [FamousMenController::class, 'famousMenIndex'])->name('famous-men');
+Route::get('/famous-detail/{id}',[FamousMenController::class, 'famousShow'])->name('famousDetail');
 Route::get('/activity', [ActivityController::class, 'activityIndex'])->name('activity');
 Route::get('/creation', [ActivityController::class, 'activityIndex'])->name('creation');
 Route::get('/structure', [AboutController::class, 'Index'])->name('structure');

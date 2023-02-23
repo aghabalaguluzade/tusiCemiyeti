@@ -276,6 +276,9 @@
                             <li class="nav-main-item">
                                 <a class="nav-main-link" href="{{ route('contacts.index') }}" aria-haspopup="true" aria-expanded="false" href="{{ route('AboutIndex') }}">
                                     <span class="nav-main-link-name">Əlaqə</span>
+                                    @if($contactsCount)
+                                    <span class="nav-main-link-badge badge badge-pill badge-danger">{{ $contactsCount }}</span>
+                                    @endif
                                 </a>
                             </li>
 
@@ -285,6 +288,9 @@
                             <li class="nav-main-item">
                                 <a class="nav-main-link" href="{{ route('memberIndex') }}" aria-haspopup="true" aria-expanded="false" href="{{ route('AboutIndex') }}">
                                     <span class="nav-main-link-name">Üzv ol</span>
+                                    @if($membersCount > 0)
+                                    <span class="nav-main-link-badge badge badge-pill badge-danger">{{ $membersCount }}</span>
+                                    @endif
                                 </a>
                             </li>
 

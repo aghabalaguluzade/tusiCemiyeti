@@ -71,7 +71,8 @@ class ContactController extends Controller
      */
     public function update(Request $request, Contact $contact)
     {
-        //
+        $contact->read = $request->input('read');
+        return redirect()->back()->with($contact->save() ? "success" : "error", true);
     }
 
     /**

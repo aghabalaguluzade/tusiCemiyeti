@@ -16,20 +16,24 @@
               <div class="blog-start d-flex">
                 <img src="{{ config('constant.path') . $new->img }}" class="img-fluid" alt="{{ $new->title }}">
                 <div class="text p-4 bg-light">
-                  <h3 class="mb-3 heading">
-                    <a href="#">{{ $new->title }}</a>
+                  <h3 class=" heading">
+                    <a href="#">{!!  Str::limit($new->title, 50, '...') !!}</a>
                   </h3>
-                  <p class="text-justify">{!!  Str::limit($new->description, 160, '...') !!}</p>
-                  <a href="{{ route('newsDetail',$new->id) }}" class="custom-btn active">
+                  <p>{!!  Str::limit($new->description, 160, '...') !!}</p>
+
+
+                <div class="news-btn-div">
+                <a href="{{ route('newsDetail',$new->id) }}" class="custom-btn active">
                     Ətraflı
                     <i id="icon" class="fas fa-long-arrow-alt-right"></i>
                   </a>
                 </div>
               </div>
+              </div>
             </div>
 
             @endforeach
-            
+
           </div>
         </div>
       </section>

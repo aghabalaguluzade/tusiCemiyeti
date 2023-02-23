@@ -12,11 +12,12 @@
 
     @if(request()->routeIs('about'))
         @if($about)
-            <div class="detail_body">
+            <div class="detail_body about">
+                <h1> Tusi Cəmiyyəti haqqında </h1>
         <div class="container">
             <div class="second_detail_section">
                 <div class="left_part">
-                    <img style="border-radius: 10px;" src="{{ config('constant.path') . $about->img }}" alt="{{ $about->description }}">
+                    <img style="border-radius: 10px;" src="{{ config('constant.path') . $about->img }}" title="Tusi Cəmiyyəti" alt="tusi-cemiyyeti">
                 </div>
                 <div class="right_part">
                     <p>{!! $about->description !!}</p>
@@ -29,9 +30,10 @@
 
 
 
-    @if(request()->routeIs('structure'))            
+    @if(request()->routeIs('structure'))
         @if($structure)
-        <div class="detail_body">
+        <div class="detail_body about">
+            <h1> Struktur </h1>
         <div class="container">
             <div class="second_detail_section">
                 <div class="left_part">
@@ -48,9 +50,10 @@
 
 
 
-    @if(request()->routeIs('view'))            
+    @if(request()->routeIs('view'))
         @if($view)
-        <div class="detail_body">
+        <div class="detail_body about">
+            <h1> Baxışımız </h1>
         <div class="container">
             <div class="second_detail_section">
                 <div class="left_part">

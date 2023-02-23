@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->integer('phone');
             $table->text('message');
+            $table->enum('read', [0,1])->default(0);
             $table->timestamps();
         });
     }

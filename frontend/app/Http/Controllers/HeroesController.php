@@ -9,6 +9,7 @@ class HeroesController extends Controller
 {
     public function heroesIndex() {
         $heroes = Martyrs::select('name','img','job','description')->get();
+        //dd($heroes);
         return view('heroes', compact('heroes'));
     }
 }

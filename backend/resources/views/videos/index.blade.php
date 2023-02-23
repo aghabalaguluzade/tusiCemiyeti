@@ -29,7 +29,7 @@
 
 
                                 <tr class="odd">
-                                        <td class="text-center sorting_1">{{ $video->id }}</td>
+                                        <td class="text-center sorting_1">{{ $loop->iteration }}</td>
                                         <td>
 
 

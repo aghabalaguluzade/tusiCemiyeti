@@ -14,6 +14,8 @@ use App\Models\Monuments;
 use App\Models\Nature;
 use App\Models\Production;
 use App\Models\Tourism;
+use App\Models\News;
+use App\Models\Events;
 use Illuminate\Http\Request;
 
 class OrdubadController extends Controller
@@ -31,6 +33,8 @@ class OrdubadController extends Controller
         $hotel_restaurant = Hotel_Restaurant::select('img','description')->first();
         $general_information = General_Information::select('img','description')->first();
         $production = Production::select('img','description')->first();
-        return view('text-inner',compact('history','monuments','folklore','customs_traditions','nature','kitchen','flora','tourism','fauna','hotel_restaurant','general_information','production'));
+        $latest_news = News::orderBy('created_at','desc')->select('id','title','created_at','img')->paginate(3);
+        $latest_events = Events::orderBy('created_at','desc')->select('id','title','created_at','img')->paginate(3);
+        return view('text-inner',compact('latest_news','latest_events','history','monuments','folklore','customs_traditions','nature','kitchen','flora','tourism','fauna','hotel_restaurant','general_information','production'));
     }
 }

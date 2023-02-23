@@ -28,7 +28,7 @@
                                 @foreach ($famousPeople as $data)
                                     
                                 <tr class="odd">
-                                        <td class="text-center sorting_1">{{ $data->id }}</td>
+                                        <td class="text-center sorting_1">{{ $loop->iteration }}</td>
                                         <td>
                                              <img src="{{ asset($data->img) }}" alt="{{ $data->name }}" style="width:100px;height:100px" />
                                         </td>

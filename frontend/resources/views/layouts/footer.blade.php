@@ -19,13 +19,13 @@
                 </li>
                 <li>
                     <a href="">
-                        <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-youtube"></i>
                     </a>
                 </li>
 
                 <li>
                     <a href="">
-                        <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-solid fa-envelope"></i>
                     </a>
                 </li>
             </ul>

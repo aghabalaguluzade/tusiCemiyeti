@@ -23,4 +23,10 @@ class MemberController extends Controller
         }
         return redirect()->back()->with("not_found",true);
     }
+
+    public function membersRead(Request $request, $id) {
+        $members = Member::find($id);
+        $members->read = $request->input('read');
+        return redirect()->back()->with($members->save() ? "success" : "error", true);
+    }
 }

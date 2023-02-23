@@ -62,6 +62,7 @@ Route::middleware(['auth','admin'])->group(function (){
     Route::post('/contacts_us',[ContactUsController::class, "contactUsPost"])->name('contactUsPost');
     Route::get('/members', [MemberController::class, 'memberIndex'])->name('memberIndex');
     Route::post('/members_delete/{id}', [MemberController::class, 'membersDelete'])->name('membersDelete');
+    Route::post('/members_read/{id}', [MemberController::class, 'membersRead'])->name('membersRead');
     Route::resource('customs_traditions',Customs_TraditionsController::class);
     Route::resource('faunas',FaunaController::class);
     Route::resource('floras',FloraController::class);   

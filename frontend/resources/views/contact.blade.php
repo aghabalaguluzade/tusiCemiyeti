@@ -4,9 +4,9 @@
      <section class="contact-page">
                 <h2>Bizimlə Əlaqə</h2>
                 <div class="container">
-                    
+
                     @if($contacts)
-                        
+
                         @foreach ($contacts as $contact)
                             <div class="contact-info">
                         <div class="card">
@@ -46,7 +46,7 @@
                                         <input id="email" class="form-control" type="email" placeholder="test@gmail.com" name="email" required />
                                     </div>
                                 </div>
-                                <div class="col-sm-6">
+                                <div class="col-sm-8 offset-2">
                                     <div class="form-group">
                                         <label for="phone">Telefon nömrəsi</label>
                                         <input id="phone" class="form-control" type="number" placeholder="+994 xx xxx xx xx" name="phone" required />

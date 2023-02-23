@@ -15,14 +15,14 @@
                     <a href="{{ route('about') }}">Haqqımızda </a>
                 </li>
                 <li>
-                    <a href="">Struktur </a>
+                    <a href="{{ route('structure') }}">Struktur </a>
                 </li>
                 <li>
-                    <a href="">Baxışımız </a>
+                    <a href="{{ route('view') }}">Baxışımız </a>
                 </li>
-                <li>
-                    <a href="">Tusi intellektual klubu </a>
-                </li>
+                <!--<li>-->
+                <!--    <a href="">Tusi intellektual klubu </a>-->
+                <!--</li>-->
             </ul>
         </li>
         <li class="has_sub"><a>FƏALİYYƏT</a>
@@ -79,7 +79,7 @@
                     <a href="{{ route('hotel_restaurant') }}">Otel-Restoran</a>
                 </li>
                 <li>
-                    <a href="{{ route('kitchen') }}">İstehsal</a>
+                    <a href="{{ route('production') }}">İstehsal</a>
                 </li>
                 <li>
                     <a href="{{ route('kitchen') }}">Mətbəxi</a>
@@ -113,9 +113,9 @@
                 </li>
             </ul>
         </li>
-        <li><a>ƏLAQƏ</a></li>
+        <li><a href="{{ route('contact') }}" >ƏLAQƏ</a></li>
         <li>
-            <a href="">Üzv ol </a>
+            <a href="{{ route('members') }}">ÜZV OL </a>
         </li>
     </ul>
     <div class="mobile_social">

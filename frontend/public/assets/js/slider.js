@@ -81,8 +81,8 @@ function getElem() {
 
 let clickCheck = true, showClear, showClear2;
 function quoteShow(evt) {
-  const style = getComputedStyle(this);
-  console.log(style);
+    const style = getComputedStyle(this);
+    console.log(style);
     if (clickCheck) {
         clickCheck = false;
         clearTimeout(showClear2);

@@ -24,7 +24,7 @@
                                 @foreach ($contacts as $contact)
                                     
                                 <tr class="odd">
-                                        <td class="text-center sorting_1">{{ $contact->id }}</td>
+                                        <td class="text-center sorting_1">{{ $loop->iteration }}</td>
                                         <td class="font-w600">{{ $contact->name }}</td>
                                         <td class="font-w600">{{ $contact->email }}</td>
                                         <td class="font-w600">{{ $contact->phone }}</td>
@@ -34,6 +34,12 @@
                                                   @method('DELETE')
                                                   @csrf
                                                   <button type="submit" class="btn btn-danger" onclick="return confirm('Silmək istədiyindən əminsən?')">Sil</button>
+                                             </form>
+                                             <form action="{{ route('contacts.update',$contact->id)}}" method="POST" style="display:inline">
+                                                  @method('put')
+                                                  @csrf
+                                                  <input type="hidden" name="read" value="1" />
+                                                  <button type="submit" class="btn btn-primary">Oxundu</button>
                                              </form>
                                         </td>
                                    </tr>

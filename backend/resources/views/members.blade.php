@@ -24,7 +24,7 @@
                                 @foreach ($members as $member)
                                     
                                 <tr class="odd">
-                                        <td class="text-center sorting_1">{{ $member->id }}</td>
+                                        <td class="text-center sorting_1">{{ $loop->iteration }}</td>
                                         <td class="font-w600">{{ $member->name }}</td>
                                         <td class="font-w600">{{ $member->email }}</td>
                                         <td class="font-w600">{{ $member->phone }}</td>
@@ -33,6 +33,11 @@
                                              <form action="{{ route('membersDelete',$member->id) }}" method="POST" style="display:inline">
                                                   @csrf
                                                   <button type="submit" class="btn btn-danger" onclick="return confirm('Silmək istədiyindən əminsən?')">Sil</button>
+                                             </form>
+                                             <form action="{{ route('membersRead',$member->id) }}" method="POST" style="display:inline">
+                                                  @csrf
+                                                  <input type="hidden" name="read" value="1" />
+                                                  <button type="submit" class="btn btn-primary">Oxundu</button>
                                              </form>
                                         </td>
                                    </tr>

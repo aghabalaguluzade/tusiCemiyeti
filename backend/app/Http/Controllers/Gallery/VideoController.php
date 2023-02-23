@@ -41,10 +41,10 @@ class VideoController extends Controller
         $request->validate([
             'preview_img' => ['required','image','mimes:png,jpg,jpeg,gif,jfif,webp','max:2048'],
             'title' => ['required','string','max:255'],
-            'url' => ['required','string','url','max:255']
+            'url' => ['required','string','max:255']
         ]);
 
-        
+
         $image = $request->file('preview_img');
         $preview_img_directory = 'uploads/videos/';
         $preview_img = Str::slug($request->title)."(preview_img)" . time() . '.' . $image->getClientOriginalExtension();
@@ -98,7 +98,7 @@ class VideoController extends Controller
             'title' => ['string','max:255'],
             'url' => ['string','url','max:255']
         ]);
-    
+
         if($request->hasFile('preview_img')) {
             $image = $request->file('preview_img');
             $directory = 'uploads/videos/';
@@ -133,7 +133,7 @@ class VideoController extends Controller
             if(file_exists($video->preview_img)) {
                 unlink($video->preview_img);
             }
-            
+
             return redirect()->back()->with($video->delete() ? "success" : "errror", true);
         }
         return redirect()->back()->with("not_found",true);

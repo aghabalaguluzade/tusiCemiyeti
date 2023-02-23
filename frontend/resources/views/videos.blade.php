@@ -1,11 +1,14 @@
 @extends('layouts.master')
 @section('title', 'Video')
+@section('css')
+    <link rel="stylesheet" href="{{ config('constant.path') }}assets/js/plugins/magnific-popup/magnific-popup.css" />
+@endsection
 @section('content')
     <section id="video">
         <div class="container">
-            
+
             @if($videos)
-                
+
                 @foreach ($videos as $video)
                     <div class="video_a-box">
                 <div class="video_img-container">
@@ -16,33 +19,29 @@
                     </div>
                 </div>
                 <div class="video_text-container">
+                    <a class="img-lightbox video popup-youtube" href="{{ $video->url }}">
                     <div class="video_icon">
                         <i class="fa-solid fa-play"></i>
                     </div>
+                    </a>
                     <h3>{{ $video->title }}</h3>
                     <div>
-                        
-                    </div>
-                </div>
-            </div>
-            <div class="video_popup">
-                <div class="video_blur"></div>
-                <div class="video_body">
-                    <div class="video_close">
-                        <i class="fa-solid fa-xmark"></i>
-                    </div>
-                    <iframe width="560" height="315" src="{{ $video->url }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
-                </div>
-    
-            </div>
-                @endforeach
 
+                    </div>
+                </div>
+            </div>            
+                @endforeach
             @endif
-    
-    
         </div>
     </section>
 @endsection
 @section('js')
-    <script src="{{ asset('assets/js/video.js') }}"></script>
+        <script src="{{ config('constant.path') }}assets/js/plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script>
+            $(document).ready(function(){
+    $('.popup-youtube').magnificPopup({
+     type: 'iframe' 
+    });
+  });
+        </script>
 @endsection

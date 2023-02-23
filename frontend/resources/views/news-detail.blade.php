@@ -23,9 +23,9 @@
                                 <div class="widget widget-latest-post">
                                     <div class="widget-body">
                                         <h2> Digər Xəbərlər </h2>
-                                        
+
                                         @foreach ($latest_news as $latest_new)
-                                            
+
                                             <div class="latest-post-aside media">
                                             <div class="lpa-left media-body">
                                                 <div class="lpa-title">

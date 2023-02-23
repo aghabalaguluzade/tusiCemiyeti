@@ -26,7 +26,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="js-ckeditor5-classic">Video linki</label>
-                                            <input type="url" class="form-control" name="url" placeholder="Video linki daxil edin..." />
+                                            <input type="text" class="form-control" name="url" placeholder="Video linki daxil edin..." />
                                         </div>
                                     </div>
                                 </div>
