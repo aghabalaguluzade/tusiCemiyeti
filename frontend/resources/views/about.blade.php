@@ -8,6 +8,12 @@
 @if(request()->routeIs('view'))
 @section('title', 'Baxışımız')
 @endif
+@if(request()->routeIs('prospect'))
+    @section('title', 'Prespektivimiz')
+@endif
+@if(request()->routeIs('tusi'))
+    @section('title', 'Umumi Məlumat')
+@endif
 @section('content')
 
     @if(request()->routeIs('about'))
@@ -65,6 +71,42 @@
             </div>
         </div>
     </div>
+        @endif
+    @endif
+
+    @if(request()->routeIs('prospect'))
+        @if($view)
+            <div class="detail_body about">
+                <h1> Prespektivimiz </h1>
+                <div class="container">
+                    <div class="second_detail_section">
+                        <div class="left_part">
+                            <img style="border-radius: 10px;" src="{{ config('constant.path') . $prospect->img }}" alt="{{ $prospect->description }}">
+                        </div>
+                        <div class="right_part">
+                            <p>{!! $prospect->description !!}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @endif
+    @endif
+
+    @if(request()->routeIs('tusi'))
+        @if($view)
+            <div class="detail_body about">
+                <h1> Umumi Məlumat </h1>
+                <div class="container">
+                    <div class="second_detail_section">
+                        <div class="left_part">
+                            <img style="border-radius: 10px;" src="{{ config('constant.path') . $tusi->img }}" alt="{{ $tusi->description }}">
+                        </div>
+                        <div class="right_part">
+                            <p>{!! $tusi->description !!}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         @endif
     @endif
 

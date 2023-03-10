@@ -8,30 +8,30 @@
         <div class="wrapper" id="wrapper">
             <div class="quote-row">
                 @foreach ($heroes as $hero)
-                    @if ( $loop->index == 1 )   <div class="quote-column col-active show">
-                        <div class="col-inner">
-                            <div class="author-meta">
-                                <div class="box-image-inner image-cover">
-                                    <img src="{{ config('constant.path') . $hero->img }}" alt="{{ $hero->name }}" title="{{ $hero->name }}" />
-                                </div>
-                                <div class="author-info">
-                                    <div class="author-name">
-                                        <p class="person-name">{{$hero->name}}</p>
-                                    </div>
-                                    <div class="author-status">
-                                        <p class="person-title"> {{ $hero->job  }} </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="quote-wrapper">
-                                <div class="quote-symbol">❛</div>
-                                <div class="box-text-inner">
-                                    <p>{!! $hero->description !!} </p>
-                                </div>
-                                <div class="quote-symbol">❜</div>
-                            </div>
-                        </div>
-                    </div> @endif
+{{--                    @if ( $loop->index === 0)   <div class="quote-column col-active show">--}}
+{{--                        <div class="col-inner">--}}
+{{--                            <div class="author-meta">--}}
+{{--                                <div class="box-image-inner image-cover">--}}
+{{--                                    <img src="{{ config('constant.path') . $hero->img }}" alt="{{ $hero->name }}" title="{{ $hero->name }}" />--}}
+{{--                                </div>--}}
+{{--                                <div class="author-info">--}}
+{{--                                    <div class="author-name">--}}
+{{--                                        <p class="person-name">{{$hero->name}}</p>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="author-status">--}}
+{{--                                        <p class="person-title"> {{ $hero->job  }} </p>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            <div class="quote-wrapper">--}}
+{{--                                <div class="quote-symbol">❛</div>--}}
+{{--                                <div class="box-text-inner">--}}
+{{--                                    <p>{!! $hero->description !!} </p>--}}
+{{--                                </div>--}}
+{{--                                <div class="quote-symbol">❜</div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div> @endif--}}
                 <div class="quote-column">
                     <div class="col-inner">
                         <div class="author-meta">

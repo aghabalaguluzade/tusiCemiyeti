@@ -86,6 +86,20 @@
                                 </ul>
                             </li>
 
+                            <li class="nav-main-item">
+                                <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
+                                    <i class="nav-main-link-icon fa fa-border-all"></i>
+                                    <span class="nav-main-link-name">Gundelik</span>
+                                </a>
+                                <ul class="nav-main-submenu">
+                                    <li class="nav-main-item">
+                                        <a class="nav-main-link" href="{{ route('daily.index') }}">
+                                            <span class="nav-main-link-name">Gundelik Siyahi</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
                             {{-- Fəxrlərimiz --}}
 
                             <li class="nav-main-item">
@@ -232,8 +246,8 @@
                                     </li>
                                 </ul>
                             </li>
-                            
-                            
+
+
                             {{-- Haqqında --}}
 
 
@@ -256,6 +270,25 @@
                                     <li class="nav-main-item">
                                         <a class="nav-main-link" href="{{ route('views.index') }}">
                                             <span class="nav-main-link-name">Baxışımız</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-main-item">
+                                        <a class="nav-main-link" href="{{ route('prospect.index') }}">
+                                            <span class="nav-main-link-name">Prespektivimiz</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-main-item">
+                                <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
+                                    <i class="nav-main-link-icon fa fa-border-all"></i>
+                                    <span class="nav-main-link-name">Tusi Klubu</span>
+                                </a>
+                                <ul class="nav-main-submenu">
+                                    <li class="nav-main-item">
+                                        <a class="nav-main-link" href="{{ route('tusi.index') }}">
+                                            <span class="nav-main-link-name">Məlumat</span>
                                         </a>
                                     </li>
                                 </ul>

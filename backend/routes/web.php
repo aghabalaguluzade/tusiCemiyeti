@@ -29,6 +29,9 @@ use App\Http\Controllers\Ordubad\TourismController;
 use App\Http\Controllers\Pride\FamousPeopleController;
 use App\Http\Controllers\StructureController;
 use App\Http\Controllers\ViewController;
+use App\Http\Controllers\ProspectController;
+use App\Http\Controllers\TusiController;
+use App\Http\Controllers\DailyController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -44,7 +47,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware(['auth','admin'])->group(function (){
     Route::get('/', function () {
-        return view('admin');   
+        return view('admin');
     })->name('adminPanel');
     Route::get('/about', [AboutController::class, 'AboutIndex'])->name('AboutIndex');
     Route::post('/about', [AboutController::class, 'AboutUpdate'])->name('AboutUpdate');
@@ -65,7 +68,7 @@ Route::middleware(['auth','admin'])->group(function (){
     Route::post('/members_read/{id}', [MemberController::class, 'membersRead'])->name('membersRead');
     Route::resource('customs_traditions',Customs_TraditionsController::class);
     Route::resource('faunas',FaunaController::class);
-    Route::resource('floras',FloraController::class);   
+    Route::resource('floras',FloraController::class);
     Route::resource('folklores',FolkloreController::class);
     Route::resource('history',HistoryController::class);
     Route::resource('hotel_restaurants',Hotel_RestaurantController::class);
@@ -79,6 +82,9 @@ Route::middleware(['auth','admin'])->group(function (){
     Route::resource('charitables',CharitableController::class);
     Route::resource('structures', StructureController::class);
     Route::resource('views', ViewController::class);
+    Route::resource('prospect', ProspectController::class);
+    Route::resource('tusi', TusiController::class);
+     Route::resource('daily',DailyController::class);
 });
 
 

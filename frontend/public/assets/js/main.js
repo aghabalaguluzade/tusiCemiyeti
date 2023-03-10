@@ -1,6 +1,5 @@
 $(function(){
 
-
   let list_btn = document.getElementById('list_btn');
   let mobile = document.querySelector('.noactive');
   let content = document.querySelector('#mobile_body_content');
@@ -31,3 +30,20 @@ $(function(){
 
  })
 })
+
+
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+})
+
+
+$(document).ready(function(){
+    $('.testimonials').bxSlider({
+        auto: true,
+        pause: 8000, //time on each review
+        mode: 'fade', // or slide
+        infiniteLoop: true,
+        controls: false, // true for arrows
+        slideMargin: 0
+    });
+});

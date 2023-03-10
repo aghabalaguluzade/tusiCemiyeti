@@ -1,10 +1,10 @@
 <?php
 namespace App\Http\Controllers;
 
-use App\Models\View;
+use App\Models\Tusi;
 use Illuminate\Http\Request;
 
-class ViewController extends Controller
+class TusiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,15 +13,15 @@ class ViewController extends Controller
      */
     public function index()
     {
-        $view = View::find(1);
-        return view('view',compact('view'));
+        $view = Tusi::find(1);
+        return view('tusi',compact('view'));
     }
 
     public function update(Request $request,$id)
     {
-        $view = View::find($id);
+        $view = Tusi::find($id);
         if($view === null) {
-            $view = new View();
+            $view = new Tusi();
             $view->description = $request->description;
         }
         $view->description = $request->description;

@@ -1,21 +1,49 @@
+
+{{--<div class="testimonials">--}}
+{{--    <div class="testimonial">--}}
+{{--        <blockquote>--}}
+{{--            At Watermark Dentistry my appointments are always a positive experience from the moment I check-in until the moment I leave. I would recommend Watermark Dentistry for both children and adults.--}}
+{{--        </blockquote>--}}
+{{--        <cite>–Jane Doe</cite>--}}
+{{--    </div>--}}
+{{--    <div class="testimonial">--}}
+{{--        <blockquote>--}}
+{{--            My appointments at Watermark Dentistry are always a positive experience from the moment I check-in until the moment I leave. I would recommend Watermark Dentistry for both children and adults.--}}
+{{--        </blockquote>--}}
+{{--        <cite>–John Doe</cite>--}}
+{{--    </div>--}}
+{{--    <div class="testimonial">--}}
+{{--        <blockquote>--}}
+{{--            At Watermark Dentistry my appointments are always a positive experience from the moment I check-in until the moment I leave. I would recommend Watermark Dentistry for both children and adults.--}}
+{{--        </blockquote>--}}
+{{--        <cite>–Jane Doe</cite>--}}
+{{--    </div>--}}
+{{--    <div class="testimonial">--}}
+{{--        <blockquote>--}}
+{{--            My appointments at Watermark Dentistry are always a positive experience from the moment I check-in until the moment I leave. I would recommend Watermark Dentistry for both children and adults.--}}
+{{--        </blockquote>--}}
+{{--        <cite>–John Doe</cite>--}}
+{{--    </div>--}}
+{{--</div>--}}
+
 <header class="respons tablet">
     <div class="container">
         <nav>
             <div class="row">
                 <div class="col-1">
                     <a href="/">
-                        <img src="{{asset('assets/img/logo.png')}}" class="logo" alt="logo" />
+                        <img src="{{asset('assets/img/logo.png')}}" class="logo" alt="logo"/>
                     </a>
                 </div>
                 <div class="col-11">
                     <div class="nav-top">
-                        <div class="header_text">
-                            <h1 class="animate_text">
-                                <span>“Ordubad</span>
-                                <span>Azərbaycanın </span>
-                                <span> incisidir.”</span>
-                            </h1>
-                        </div>
+{{--                        <div class="header_text">--}}
+{{--                            <h1 class="animate_text">--}}
+{{--                                <span>“Ordubad</span>--}}
+{{--                                <span>Azərbaycanın </span>--}}
+{{--                                <span> incisidir.”</span>--}}
+{{--                            </h1>--}}
+{{--                        </div>--}}
                         <form action="{{ route('search') }}" method="GET" class="search-form">
                             <input type="search" class="search-input" name="search" placeholder="Axtar... "/>
                             <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
@@ -44,44 +72,21 @@
                     <div class="nav-bottom">
                         <ul>
                             <li>
-                                <a href="{{ route('about') }}">Haqqımızda</a>
+                                <a href="">Haqqımızda</a>
                                 <i class="fa-solid fa-chevron-down"></i>
                                 <div class="sub-menu">
                                     <ul>
                                         <li>
-                                            <a href="{{ route('about') }}">Haqqımızda </a>
+                                            <a href="{{ route('about') }}">Ümumi məlumat</a>
                                         </li>
                                         <li>
-                                            <a href="{{ route('structure') }}">Struktur </a>
+                                            <a href="{{ route('structure') }}">Strukturumuz </a>
                                         </li>
                                         <li>
                                             <a href="{{ route('view') }}">Baxışımız </a>
                                         </li>
-{{--                                        <li>--}}
-{{--                                            <a href="">Tusi intellektual klubu </a>--}}
-{{--                                        </li>--}}
-                                    </ul>
-                                </div>
-                            </li>
-                            <li>
-                                <a href=""> Fəaliyyət </a>
-                                <i class="fa-solid fa-chevron-down"></i>
-                                <div class="sub-menu">
-                                    <ul>
                                         <li>
-                                            <a href="{{ route('activity') }}">Fəaliyyət </a>
-                                        </li>
-                                        <li>
-                                            <a href="{{ route('charitable') }}">Xeyriyyəçilik </a>
-                                        </li>
-                                        <li>
-                                            <a href="{{ route('enlightenment') }}">Maarifçilik </a>
-                                        </li>
-                                        <li>
-                                            <a href="{{ route('news') }}">Xəbərlər </a>
-                                        </li>
-                                        <li>
-                                            <a href="{{ route('event-blog') }}">Tədbirlər </a>
+                                            <a href="{{ route('prospect') }}">Prespektivimiz </a>
                                         </li>
                                     </ul>
                                 </div>
@@ -136,23 +141,60 @@
                                 </div>
                             </li>
                             <li>
-                                <a href="#"> Fəxrlərimiz </a>
+                                <a href=""> Fəaliyyət </a>
                                 <i class="fa-solid fa-chevron-down"></i>
                                 <div class="sub-menu">
                                     <ul>
                                         <li>
-                                            <a href="{{ route('famous-men') }}">Tanınmış şəxslər </a>
+                                            <a href="{{ route('news') }}">Xəbərlər </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('event-blog') }}">Tədbirlər </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('daily') }}">Gundəlik </a>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
                             <li>
-                                <a href="#"> Qürurlarımız </a>
+                                <a href="">Missiyamız</a>
                                 <i class="fa-solid fa-chevron-down"></i>
                                 <div class="sub-menu">
                                     <ul>
                                         <li>
-                                            <a href="{{ route('heroes') }}"> Ordubad Şəhidləri </a>
+                                            <a href="{{ route('charitable') }}">Xeyriyyəçilik </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('enlightenment') }}">Maarifçilik </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#"> Fəxrlərimiz </a>
+                                <i class="fa-solid fa-chevron-down"></i>
+                                <div class="sub-menu">
+                                    <ul>
+                                        <li>
+                                            <a href="{{ route('famous-men') }}">Tanınmışlarımız </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('heroes') }}"> Şəhidlərimiz </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#"> "Tusi" Klubu </a>
+                                <i class="fa-solid fa-chevron-down"></i>
+                                <div class="sub-menu">
+                                    <ul>
+                                        <li>
+                                            <a href="{{ route('tusi') }}">Umumi məlumat </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('members') }}">Üzv ol</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -174,9 +216,7 @@
                             <li>
                                 <a href="{{ route('contact') }}"> Əlaqə </a>
                             </li>
-                            <li>
-                                <a href="{{ route('members') }}">Üzv ol</a>
-                            </li>
+
                         </ul>
                     </div>
                 </div>
@@ -184,3 +224,50 @@
         </nav>
     </div>
 </header>
+
+
+
+@if($daily->isEmpty())
+
+@else
+    <!-- Button trigger modal -->
+    <p type="button" class="daily_btn" data-toggle="tooltip" data-placement="left" title="Yeniliklərdən xəbərdar ol" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <i class="fa-solid fa-bullhorn"></i>
+    </p>
+
+@endif
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel"> Gündəlik hadisələr </h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                @foreach($daily as $day)
+                    <div class="card mb-3" style="max-width: 100%;">
+                        <div class="row g-0">
+
+                           @if($day->img)
+                                <div class="col-md-4">
+                                    <img src="{{ config('constant.path') . $day->img }}" class="img-fluid rounded-start" alt="...">
+                                </div>
+                            @endif
+                            <div class="{{  $day->img === null ? 'col-md-12' : 'col-md-8' }}">
+                                <div class="card-body">
+                                    <h5 class="card-title"> {{$day->title}} </h5>
+                                    <p class="card-text">{!! $day->description !!}</p>
+                                    <p class="card-text"><small class="text-muted"> {{ $day->created_at }}</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                @endforeach
+            </div>
+
+        </div>
+    </div>
+</div>

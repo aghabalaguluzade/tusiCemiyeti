@@ -13,6 +13,7 @@ use App\Http\Controllers\MemberController;
 use App\Http\Controllers\MissionController;
 use App\Http\Controllers\OrdubadController;
 use App\Http\Controllers\VideosController;
+use App\Http\Controllers\DailyController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -60,3 +61,6 @@ Route::get('/activity', [ActivityController::class, 'activityIndex'])->name('act
 Route::get('/creation', [ActivityController::class, 'activityIndex'])->name('creation');
 Route::get('/structure', [AboutController::class, 'Index'])->name('structure');
 Route::get('/view', [AboutController::class, 'Index'])->name('view');
+Route::get('/prospect', [AboutController::class, 'Index'])->name('prospect');
+Route::get('/tusi', [AboutController::class, 'Index'])->name('tusi');
+Route::get('/daily', [DailyController::class, 'dailyIndex'])->name('daily');

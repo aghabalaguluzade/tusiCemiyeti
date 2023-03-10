@@ -12,36 +12,16 @@
             <i class="fa-solid fa-chevron-down"></i>
             <ul class="mobile_subcategory_ul">
                 <li>
-                    <a href="{{ route('about') }}">Haqqımızda </a>
+                    <a href="{{ route('about') }}"> Ümumi məlumat </a>
                 </li>
                 <li>
-                    <a href="{{ route('structure') }}">Struktur </a>
+                    <a href="{{ route('structure') }}">Strukturumuz </a>
                 </li>
                 <li>
                     <a href="{{ route('view') }}">Baxışımız </a>
                 </li>
-                <!--<li>-->
-                <!--    <a href="">Tusi intellektual klubu </a>-->
-                <!--</li>-->
-            </ul>
-        </li>
-        <li class="has_sub"><a>FƏALİYYƏT</a>
-            <i class="fa-solid fa-chevron-down"></i>
-            <ul class="mobile_subcategory_ul">
                 <li>
-                    <a href="{{ route('activity') }}">Fəaliyyət </a>
-                </li>
-                <li>
-                    <a href="{{ route('charitable') }}">Xeyriyyəçilik </a>
-                </li>
-                <li>
-                    <a href="{{ route('enlightenment') }}">Maarifçilik </a>
-                </li>
-                <li>
-                    <a href="{{ route('news') }}">Xəbərlər </a>
-                </li>
-                <li>
-                    <a href="{{ route('event-blog') }}">Tədbirlər </a>
+                    <a href="{{ route('view') }}">Prespektivimiz </a>
                 </li>
             </ul>
         </li>
@@ -86,22 +66,55 @@
                 </li>
             </ul>
         </li>
+
+        <li class="has_sub"><a>FƏALİYYƏT</a>
+            <i class="fa-solid fa-chevron-down"></i>
+            <ul class="mobile_subcategory_ul">
+                <li>
+                    <a href="{{ route('news') }}">Xəbərlər </a>
+                </li>
+                <li>
+                    <a href="{{ route('event-blog') }}">Tədbirlər </a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="has_sub"><a>MİSSİYAMIZ</a>
+            <i class="fa-solid fa-chevron-down"></i>
+            <ul class="mobile_subcategory_ul">
+                <li>
+                    <a href="{{ route('charitable') }}">Xeyriyyəçilik </a>
+                </li>
+                <li>
+                    <a href="{{ route('enlightenment') }}">Maarifçilik </a>
+                </li>
+            </ul>
+        </li>
+
         <li class="has_sub"><a>FƏXRLƏRİMİZ</a>
             <i class="fa-solid fa-chevron-down"></i>
             <ul class="mobile_subcategory_ul">
                 <li>
-                    <a href="{{ route('famous-men') }}">Tanınmış şəxslər </a>
+                    <a href="{{ route('famous-men') }}">Tanınmışlarımız </a>
+                </li>
+                <li>
+                    <a href="{{ route('heroes') }}"> Şəhidlərimiz </a>
                 </li>
             </ul>
         </li>
-        <li class="has_sub"><a>QÜRURLARIMIZ</a>
+
+        <li class="has_sub"><a>"TUSİ" KLUBU</a>
             <i class="fa-solid fa-chevron-down"></i>
             <ul class="mobile_subcategory_ul">
                 <li>
-                    <a href="{{ route('heroes') }}"> Ordubad Şəhidləri </a>
+                    <a href="{{ route('photo') }}">Ümumi məlumat </a>
+                </li>
+                <li>
+                    <a href="{{ route('members') }}">Üzv ol </a>
                 </li>
             </ul>
         </li>
+
         <li class="has_sub"><a>QALAREYA</a>
             <i class="fa-solid fa-chevron-down"></i>
             <ul class="mobile_subcategory_ul">
@@ -114,9 +127,6 @@
             </ul>
         </li>
         <li><a href="{{ route('contact') }}" >ƏLAQƏ</a></li>
-        <li>
-            <a href="{{ route('members') }}">ÜZV OL </a>
-        </li>
     </ul>
     <div class="mobile_social">
         <ul class="d-flex">

@@ -1,10 +1,11 @@
 <?php
+
 namespace App\Http\Controllers;
 
-use App\Models\View;
+use App\Models\Prospect;
 use Illuminate\Http\Request;
 
-class ViewController extends Controller
+class ProspectController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,20 +14,20 @@ class ViewController extends Controller
      */
     public function index()
     {
-        $view = View::find(1);
-        return view('view',compact('view'));
+        $prospect = Prospect::find(1);
+        return view('prospect',compact('prospect'));
     }
 
     public function update(Request $request,$id)
     {
-        $view = View::find($id);
-        if($view === null) {
-            $view = new View();
-            $view->description = $request->description;
+        $prospect = Prospect::find($id);
+        if($prospect === null) {
+            $prospect = new Prospect();
+            $prospect->description = $request->description;
         }
-        $view->description = $request->description;
+        $prospect->description = $request->description;
 
-        if($view->img === null || $view->description === null) {
+        if($prospect->img === null || $prospect->description === null) {
             $request->validate([
                 'img' => 'required|image|mimes:png,jpg,jpeg,gif,jfif,webp',
                 'description' => 'required'
@@ -43,15 +44,15 @@ class ViewController extends Controller
             $directory = 'uploads/about/';
             $img_name = $request->file('img')->getClientOriginalName();
 
-            if(file_exists($view->img)) {
-                unlink($view->img);
+            if(file_exists($prospect->img)) {
+                unlink($prospect->img);
             }
 
             $image->move($directory, $img_name);
             $img_name = $directory . $img_name;
-            $view->img = $img_name;
+            $prospect->img = $img_name;
         }
 
-        return redirect()->back()->with($view->save() ? "success" : "error", true);
+        return redirect()->back()->with($prospect->save() ? "success" : "error", true);
     }
 }

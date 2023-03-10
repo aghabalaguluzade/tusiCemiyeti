@@ -35,6 +35,10 @@
 }
 
 @media only screen and (max-width: 992px) {
+    .show{
+        z-index: 9;
+    }
+
 
     .tel{
         display: none;
